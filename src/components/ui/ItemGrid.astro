@@ -20,7 +20,7 @@ const {
   items && items.length > 0 && (
     <div
       class={twMerge(
-        `grid mx-auto gap-8 md:gap-y-12 ${
+        `grid mx-auto gap-6 md:gap-8 ${
           columns === 4
             ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
             : columns === 3
@@ -34,25 +34,39 @@ const {
     >
       {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
         <div class="intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-          <div class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
+          {/* M3 Card with elevation states */}
+          <div
+            class={twMerge(
+              'flex flex-row max-w-md p-6 rounded-2xl',
+              'bg-white dark:bg-slate-800/50',
+              'border border-gray-100 dark:border-slate-700',
+              'shadow-m3-1 hover:shadow-m3-2',
+              'transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]',
+              'hover:-translate-y-1',
+              panelClass,
+              itemClasses?.panel
+            )}
+          >
             <div class="flex justify-center">
               {(icon || defaultIcon) && (
-                <Icon
-                  name={icon || defaultIcon}
-                  class={twMerge('w-7 h-7 mr-2 rtl:mr-0 rtl:ml-2', defaultIconClass, itemClasses?.icon)}
-                />
+                <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20 mr-4 rtl:mr-0 rtl:ml-4">
+                  <Icon
+                    name={icon || defaultIcon}
+                    class={twMerge('w-6 h-6', defaultIconClass, itemClasses?.icon)}
+                  />
+                </div>
               )}
             </div>
-            <div class="mt-0.5">
-              {title && <h3 class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</h3>}
+            <div class="mt-0.5 flex-1">
+              {title && <h3 class={twMerge('text-lg font-semibold text-gray-900 dark:text-white', titleClass, itemClasses?.title)}>{title}</h3>}
               {description && (
                 <p
-                  class={twMerge(`${title ? 'mt-3' : ''} text-muted`, descriptionClass, itemClasses?.description)}
+                  class={twMerge(`${title ? 'mt-2' : ''} text-muted text-sm leading-relaxed`, descriptionClass, itemClasses?.description)}
                   set:html={description}
                 />
               )}
               {callToAction && (
-                <div class={twMerge(`${title || description ? 'mt-3' : ''}`, actionClass, itemClasses?.actionClass)}>
+                <div class={twMerge(`${title || description ? 'mt-4' : ''}`, actionClass, itemClasses?.actionClass)}>
                   <Button variant="link" {...callToAction} />
                 </div>
               )}

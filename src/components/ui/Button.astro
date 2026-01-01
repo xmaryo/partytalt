@@ -6,12 +6,16 @@ import type { CallToAction as Props } from '~/types';
 const {
   variant = 'secondary',
   target,
-  text = Astro.slots.render('default'),
+  text: textProp,
   icon = '',
   class: className = '',
   type,
   ...rest
 } = Astro.props;
+
+// Handle text - use prop if provided, otherwise check slot
+const slotContent = await Astro.slots.render('default');
+const text = textProp || (slotContent && slotContent.trim() ? slotContent : '');
 
 const variants = {
   primary: 'btn-primary',

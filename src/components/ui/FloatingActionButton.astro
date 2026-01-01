@@ -1,0 +1,166 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  href?: string;
+  icon?: string;
+  label?: string;
+}
+
+const {
+  href = '/kontakt',
+  icon = 'mdi:message-outline',
+  label = 'Få offert',
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class="fab-container"
+  aria-label={label}
+>
+  <span class="fab-icon">
+    <Icon name={icon} class="w-6 h-6" />
+  </span>
+  <span class="fab-label">{label}</span>
+</a>
+
+<style>
+  .fab-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 50;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    height: 56px;
+    padding: 0 20px;
+    border-radius: 16px;
+
+    background: var(--aw-color-primary, rgb(26 115 232));
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+
+    /* M3 Elevation level 3 */
+    box-shadow:
+      0 3px 5px -1px rgb(0 0 0 / 0.2),
+      0 6px 10px 0 rgb(0 0 0 / 0.14),
+      0 1px 18px 0 rgb(0 0 0 / 0.12);
+
+    /* GPU acceleration */
+    transform: translateZ(0);
+    will-change: transform, box-shadow, width;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    /* M3 Motion */
+    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+
+    /* State layer */
+    overflow: hidden;
+  }
+
+  .fab-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: white;
+    opacity: 0;
+    transition: opacity 0.2s cubic-bezier(0.2, 0, 0, 1);
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  .fab-container:hover {
+    transform: translateY(-2px) translateZ(0);
+    box-shadow:
+      0 5px 8px -2px rgb(0 0 0 / 0.25),
+      0 8px 14px 1px rgb(0 0 0 / 0.18),
+      0 3px 22px 2px rgb(0 0 0 / 0.15);
+  }
+
+  .fab-container:hover::before {
+    opacity: 0.12;
+  }
+
+  .fab-container:active {
+    transform: scale(0.96) translateZ(0);
+  }
+
+  .fab-container:active::before {
+    opacity: 0.2;
+  }
+
+  .fab-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .fab-label {
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 120px;
+  }
+
+  /* Mobile - show icon only, expand on hover */
+  @media (max-width: 640px) {
+    .fab-container {
+      padding: 0;
+      width: 56px;
+      justify-content: center;
+    }
+
+    .fab-label {
+      display: none;
+    }
+  }
+
+  /* Hide when at bottom of page (near CTA) */
+  .fab-hidden {
+    transform: translateY(100px) translateZ(0);
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  // Hide FAB when near bottom CTA
+  const fab = document.querySelector('.fab-container');
+  const footer = document.querySelector('footer');
+
+  function updateFabVisibility() {
+    if (!fab || !footer) return;
+
+    const footerRect = footer.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    // Hide FAB when footer is visible
+    if (footerRect.top < windowHeight + 100) {
+      fab.classList.add('fab-hidden');
+    } else {
+      fab.classList.remove('fab-hidden');
+    }
+  }
+
+  // Throttle scroll events
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateFabVisibility();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Initial check
+  updateFabVisibility();
+</script>

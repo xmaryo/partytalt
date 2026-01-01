@@ -13,9 +13,9 @@ export interface Props {
 const {
   label = 'Toggle between Dark and Light mode',
   class:
-    className = 'text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center',
+    className = 'theme-toggle text-muted dark:text-gray-400 focus:outline-none rounded-lg text-sm p-2.5 inline-flex items-center',
   iconClass = 'w-6 h-6',
-  iconName = 'tabler:sun',
+  iconName = 'mdi:weather-sunny',
 } = Astro.props;
 ---
 
@@ -26,3 +26,21 @@ const {
     </button>
   )
 }
+
+<style>
+  .theme-toggle {
+    position: relative;
+    border: 2px solid transparent;
+    transition: border-color 0.2s cubic-bezier(0.2, 0, 0, 1), background-color 0.2s cubic-bezier(0.2, 0, 0, 1);
+  }
+
+  .theme-toggle:hover {
+    border-color: var(--aw-color-primary, rgb(26 115 232));
+    background-color: rgba(26, 115, 232, 0.05);
+  }
+
+  :global(.dark) .theme-toggle:hover {
+    border-color: var(--aw-color-primary, rgb(96 165 250));
+    background-color: rgba(96, 165, 250, 0.1);
+  }
+</style>

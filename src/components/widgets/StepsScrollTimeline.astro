@@ -1,0 +1,39 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import ScrollTimeline from '~/components/ui/ScrollTimeline';
+import type { Steps as Props } from '~/types';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline,
+  items = [],
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+
+// Transform items to match ScrollTimeline interface
+const timelineItems = items.map((item) => ({
+  title: item.title || '',
+  description: item.description || '',
+  icon: item.icon,
+}));
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    classes={{
+      container: 'text-center mb-12',
+      title: 'text-3xl md:text-4xl font-bold',
+      subtitle: 'text-lg text-gray-600 dark:text-slate-400',
+    }}
+  />
+
+  <ScrollTimeline client:visible items={timelineItems} />
+</WidgetWrapper>

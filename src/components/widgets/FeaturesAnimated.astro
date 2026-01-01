@@ -1,0 +1,137 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import AnimatedItemGrid from '~/components/ui/AnimatedItemGrid';
+import { Icon } from 'astro-icon/components';
+import type { Features as Props } from '~/types';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  items = [],
+  columns = 2,
+
+  defaultIcon,
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+
+// Transform items for AnimatedItemGrid - we need to handle icons server-side
+const transformedItems = items.map((item) => ({
+  title: item.title,
+  description: item.description,
+  callToAction: item.callToAction,
+}));
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
+
+  <!-- Animated grid with Framer Motion -->
+  <div class={`grid mx-auto gap-6 md:gap-8 items-stretch ${
+    columns === 4
+      ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
+      : columns === 3
+        ? 'lg:grid-cols-3 sm:grid-cols-2'
+        : columns === 2
+          ? 'sm:grid-cols-2'
+          : ''
+  }`}>
+    {items.map((item, index) => (
+      <div
+        class="animated-card-wrapper h-full"
+        style={`--delay: ${index * 0.1}s`}
+      >
+        <div
+          class={`
+            flex flex-row h-full p-6 rounded-2xl
+            bg-white dark:bg-slate-800/50
+            border border-gray-100 dark:border-slate-700
+            shadow-m3-1 hover:shadow-m3-2
+            transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]
+            hover:-translate-y-2 active:scale-[0.98]
+            animate-card-enter
+          `}
+        >
+          <div class="flex justify-center">
+            {(item.icon || defaultIcon) && (
+              <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20 mr-4 rtl:mr-0 rtl:ml-4">
+                <Icon
+                  name={item.icon || defaultIcon}
+                  class="w-6 h-6 text-primary"
+                />
+              </div>
+            )}
+          </div>
+          <div class="mt-0.5 flex-1">
+            {item.title && <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{item.title}</h3>}
+            {item.description && (
+              <p
+                class={`${item.title ? 'mt-2' : ''} text-muted text-sm leading-relaxed`}
+                set:html={item.description}
+              />
+            )}
+            {item.callToAction && (
+              <div class={`${item.title || item.description ? 'mt-4' : ''}`}>
+                <a
+                  href={item.callToAction.href}
+                  class="text-primary hover:text-primary/80 text-sm font-medium transition-colors inline-flex items-center gap-1"
+                >
+                  {item.callToAction.text}
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</WidgetWrapper>
+
+<style>
+  @keyframes cardEnter {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animated-card-wrapper {
+    opacity: 0;
+  }
+
+  .animated-card-wrapper.in-view {
+    animation: cardEnter 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: var(--delay);
+  }
+</style>
+
+<script>
+  // Intersection Observer for scroll-triggered animations
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '-50px' }
+  );
+
+  document.querySelectorAll('.animated-card-wrapper').forEach((el) => {
+    observer.observe(el);
+  });
+</script>

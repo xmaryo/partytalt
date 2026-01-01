@@ -1,0 +1,121 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import FAQsAnimated from '~/components/widgets/FAQsAnimated.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Vanliga frågor (FAQ)',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="FAQ"
+    title="Vanliga frågor"
+    subtitle="Här hittar du svar på de vanligaste frågorna om vår uthyrning. Hittar du inte svaret du söker? Kontakta oss!"
+  />
+
+  <FAQsAnimated
+    title="Om bokning"
+    items={[
+      {
+        title: 'Hur långt i förväg ska jag boka?',
+        description: 'Vi rekommenderar att boka minst 2-4 veckor innan ditt event, särskilt under högsäsong (maj-september). Vid större event eller bröllop, boka gärna ännu tidigare för att säkra tillgänglighet.',
+      },
+      {
+        title: 'Hur bokar jag?',
+        description: 'Kontakta oss via kontaktformuläret, e-post eller telefon. Berätta om ditt event så skickar vi en offert. När du accepterar offerten är bokningen bekräftad.',
+      },
+      {
+        title: 'Kan jag avboka?',
+        description: 'Ja, avbokning är möjlig. Vid avbokning mer än 14 dagar innan eventet återbetalas eventuell deposition. Vid senare avbokning gäller våra bokningsvillkor.',
+      },
+      {
+        title: 'Behöver jag betala i förskott?',
+        description: 'Vid större beställningar begär vi en deposition på 30-50% för att bekräfta bokningen. Resterande belopp betalas efter eventet.',
+      },
+    ]}
+  />
+
+  <FAQsAnimated
+    title="Om leverans & montering"
+    items={[
+      {
+        title: 'Ingår leverans i priset?',
+        description: 'Leverans inom Helsingborg ingår ofta i priset. För andra orter i Skåne tillkommer en fraktkostnad baserat på avstånd. Kontakta oss för exakt pris.',
+      },
+      {
+        title: 'Monterar ni tälten?',
+        description: 'Ja, vi erbjuder komplett montering och nedmontering av alla våra tält. Detta ingår normalt i priset för partytält.',
+      },
+      {
+        title: 'När levererar ni?',
+        description: 'Vi levererar normalt dagen innan eller på morgonen samma dag som eventet. Vi hämtar dagen efter eller enligt överenskommelse.',
+      },
+      {
+        title: 'Vilka områden levererar ni till?',
+        description: 'Vi levererar i hela Skåne med fokus på Helsingborg, Landskrona, Ängelholm, Höganäs, Bjuv, Klippan, Båstad, Lund och Malmö.',
+      },
+    ]}
+  />
+
+  <FAQsAnimated
+    title="Om produkterna"
+    items={[
+      {
+        title: 'Hur stora är era tält?',
+        description: 'Vi har flextält från 3x3 meter och partytält upp till 6x12 meter. Partytälten kan kombineras för ännu större ytor. Kontakta oss för att hitta rätt storlek.',
+      },
+      {
+        title: 'Hur många gäster ryms i ett tält?',
+        description: 'Ett 4x8 meter tält passar ca 30-50 gäster sittande vid bord. Ett 6x12 meter tält passar ca 60-100 gäster. Vi hjälper dig att beräkna rätt storlek.',
+      },
+      {
+        title: 'Tål tälten regn?',
+        description: 'Ja, våra partytält har vattentäta PVC-tak och kan kompletteras med väggar. De är gjorda för att klara svenskt väder.',
+      },
+      {
+        title: 'Vad händer vid storm?',
+        description: 'Vid kraftig storm eller extremt väder kontaktar vi dig för att diskutera lösningar. Säkerheten går alltid först.',
+      },
+    ]}
+  />
+
+  <FAQsAnimated
+    title="Om priser"
+    items={[
+      {
+        title: 'Vad kostar det att hyra?',
+        description: 'Priserna varierar beroende på produkt, antal och period. Se vår prissida för riktpriser eller kontakta oss för en exakt offert.',
+      },
+      {
+        title: 'Finns det rabatt vid större beställningar?',
+        description: 'Ja, vi erbjuder mängdrabatt. Ju mer du hyr, desto bättre pris per enhet.',
+      },
+      {
+        title: 'Vad ingår i priset?',
+        description: 'I våra priser ingår normalt produkten, leverans inom Helsingborg, montering (för tält) och hämtning.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Kontakta oss',
+        href: '/kontakt',
+        icon: 'mdi:email-outline',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Har du fler frågor?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Kontakta oss så svarar vi gärna på alla dina funderingar.
+    </Fragment>
+  </CallToAction>
+</Layout>

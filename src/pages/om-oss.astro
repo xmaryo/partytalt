@@ -1,0 +1,100 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import FeaturesAnimated from '~/components/widgets/FeaturesAnimated.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import partytaltImg from '~/assets/images/partytalt.webp';
+
+const metadata = {
+  title: 'Om oss',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Om PartyTent"
+    title="Din lokala partner för eventuthyrning"
+    subtitle="Vi hjälper dig att skapa minnesvärda event i Helsingborg och Skåne. Med personlig service och kvalitetsprodukter gör vi ditt event till en succé."
+  />
+
+  <Content
+    isReversed
+    title="Oavsett vad ni firar, har vi rätt tält för dig"
+    image={{ src: partytaltImg, alt: 'Partytält' }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        Vi gör det enkelt att ordna fester i Helsingborg utan stress och krångel. Vår verksamhet är inriktad på partytält och tillhörande utrustning, med lösningar som anpassas efter plats, antal gäster och typ av tillställning.
+      </p>
+      <p class="mb-4">
+        Oavsett om det är student, födelsedag eller sommarfest levererar vi tält, bord, stolar, golv, belysning och kyl direkt till dig. Vi monterar allt på plats och ser till att det står rätt och stabilt innan festen börjar. När festen är över kommer vi tillbaka och tar hand om nedmonteringen.
+      </p>
+      <p>
+        Vi är ett lokalt företag i Helsingborg som värdesätter enkel kontakt, raka besked och hög leveranssäkerhet. Vårt mål är att du ska känna dig trygg hela vägen och kunna fokusera på det som är viktigast – att festen blir lyckad.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <FeaturesAnimated
+    title="Varför välja oss?"
+    subtitle="Det som gör oss unika"
+    columns={3}
+    items={[
+      {
+        title: 'Utan stress och krångel',
+        description: 'Vi gör det enkelt att ordna fester. Du slipper stressen – vi tar hand om allt praktiskt.',
+        icon: 'mdi:emoticon-happy-outline',
+      },
+      {
+        title: 'Komplett service',
+        description: 'Vi levererar, monterar allt på plats och ser till att det står rätt och stabilt. Efter festen hämtar vi upp.',
+        icon: 'mdi:truck-delivery-outline',
+      },
+      {
+        title: 'Anpassade lösningar',
+        description: 'Lösningar som anpassas efter plats, antal gäster och typ av tillställning – student, födelsedag eller bröllop.',
+        icon: 'mdi:tune-variant',
+      },
+      {
+        title: 'Lokalt i Helsingborg',
+        description: 'Vi är ett lokalt företag som värdesätter enkel kontakt och raka besked.',
+        icon: 'mdi:map-marker-outline',
+      },
+      {
+        title: 'Hög leveranssäkerhet',
+        description: 'Du kan lita på att vi levererar i tid. Vårt mål är att du ska känna dig trygg hela vägen.',
+        icon: 'mdi:shield-check-outline',
+      },
+      {
+        title: 'Allt du behöver',
+        description: 'Tält, bord, stolar, golv, belysning och kyl – vi har allt för ett lyckat event.',
+        icon: 'mdi:package-variant-closed',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Kontakta oss',
+        href: '/kontakt',
+        icon: 'mdi:email-outline',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Vill du veta mer?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Kontakta oss så berättar vi mer om hur vi kan hjälpa dig med ditt event.
+    </Fragment>
+  </CallToAction>
+</Layout>
