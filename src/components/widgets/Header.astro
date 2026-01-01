@@ -348,34 +348,42 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
 <script>
   // GPU-accelerated scroll detection with requestAnimationFrame
-  let ticking = false;
-  let lastScrollY = 0;
-  const header = document.querySelector('.header-container');
-  const SCROLL_THRESHOLD = 50;
+  function initHeaderScroll() {
+    let ticking = false;
+    const header = document.querySelector('.header-container');
+    const SCROLL_THRESHOLD = 50;
 
-  function updateHeader() {
-    const scrollY = window.scrollY;
+    if (!header) return;
 
-    if (scrollY > SCROLL_THRESHOLD) {
-      header?.classList.add('header-scrolled');
-    } else {
-      header?.classList.remove('header-scrolled');
+    function updateHeader() {
+      const scrollY = window.scrollY;
+
+      if (scrollY > SCROLL_THRESHOLD) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+
+      ticking = false;
     }
 
-    lastScrollY = scrollY;
-    ticking = false;
-  }
-
-  function onScroll() {
-    if (!ticking) {
-      requestAnimationFrame(updateHeader);
-      ticking = true;
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
     }
+
+    // Use passive listener for better scroll performance
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Initial check
+    updateHeader();
   }
 
-  // Use passive listener for better scroll performance
-  window.addEventListener('scroll', onScroll, { passive: true });
+  // Initialize on load
+  initHeaderScroll();
 
-  // Initial check
-  updateHeader();
+  // Re-initialize after View Transitions
+  document.addEventListener('astro:after-swap', initHeaderScroll);
 </script>

@@ -137,16 +137,7 @@
   }
 }
 
-/* Floating header scroll state */
-#header.scroll > div:first-child {
-  @apply bg-white/90 dark:bg-slate-900/90;
-  box-shadow: 0 4px 20px 0 rgb(0 0 0 / 10%);
-}
-.dark #header.scroll > div:first-child,
-#header.scroll.dark > div:first-child {
-  @apply bg-slate-900/90;
-  box-shadow: 0 4px 20px 0 rgb(0 0 0 / 30%);
-}
+/* Header scroll state is now handled in Header.astro component */
 
 /* Mobile menu expansion */
 #header.expanded nav {
