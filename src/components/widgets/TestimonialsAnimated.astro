@@ -1,0 +1,36 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import TestimonialsCarousel from '~/components/ui/TestimonialsCarousel';
+
+interface Props {
+  id?: string;
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  isDark?: boolean;
+}
+
+const {
+  id,
+  title = 'Vad våra kunder säger',
+  subtitle = 'Läs om andras upplevelser med PartyTent Helsingborg',
+  tagline = 'Recensioner',
+  isDark = false,
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass="max-w-6xl">
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    classes={{
+      container: 'text-center mb-8',
+      title: 'text-3xl md:text-4xl font-bold',
+      subtitle: 'text-lg text-gray-600 dark:text-slate-400',
+    }}
+  />
+
+  <TestimonialsCarousel client:visible />
+</WidgetWrapper>

@@ -1,0 +1,93 @@
+---
+// Animated gradient blobs for hero background
+---
+
+<div class="blobs-container">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<style>
+  .blobs-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
+    animation: blob-float 20s ease-in-out infinite;
+  }
+
+  .blob-1 {
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    top: -200px;
+    right: -100px;
+    animation-delay: 0s;
+  }
+
+  .blob-2 {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+    bottom: -150px;
+    left: -100px;
+    animation-delay: -7s;
+  }
+
+  .blob-3 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: -14s;
+  }
+
+  @keyframes blob-float {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    25% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    50% {
+      transform: translate(-20px, 20px) scale(0.95);
+    }
+    75% {
+      transform: translate(40px, 30px) scale(1.05);
+    }
+  }
+
+  .blob-3 {
+    animation-name: blob-float-center;
+  }
+
+  @keyframes blob-float-center {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    25% {
+      transform: translate(-40%, -60%) scale(1.1);
+    }
+    50% {
+      transform: translate(-60%, -40%) scale(0.95);
+    }
+    75% {
+      transform: translate(-45%, -55%) scale(1.05);
+    }
+  }
+
+  :global(.dark) .blob {
+    opacity: 0.3;
+  }
+</style>

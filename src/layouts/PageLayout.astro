@@ -2,7 +2,7 @@
 import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
-import FloatingActionButton from '~/components/ui/FloatingActionButton.astro';
+import CustomCursor from '~/components/ui/CustomCursor';
 
 import { headerData, footerData } from '~/navigation';
 
@@ -16,6 +16,9 @@ const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
+  <!-- Custom Cursor (desktop only) -->
+  <CustomCursor client:media="(hover: hover) and (pointer: fine)" />
+
   <slot name="header">
     <Header {...headerData} isSticky showToggleTheme />
   </slot>
@@ -25,7 +28,41 @@ const { metadata } = Astro.props;
   <slot name="footer">
     <Footer {...footerData} />
   </slot>
-
-  <!-- M3 Floating Action Button -->
-  <FloatingActionButton href="/kontakt" icon="mdi:message-outline" label="Få offert" />
 </Layout>
+
+<style is:global>
+  /* Page transition animations */
+  @keyframes fade-in {
+    from { opacity: 0; }
+  }
+
+  @keyframes fade-out {
+    to { opacity: 0; }
+  }
+
+  @keyframes slide-from-right {
+    from { transform: translateX(30px); opacity: 0; }
+  }
+
+  @keyframes slide-to-left {
+    to { transform: translateX(-30px); opacity: 0; }
+  }
+
+  ::view-transition-old(root) {
+    animation: 180ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+               300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+  }
+
+  ::view-transition-new(root) {
+    animation: 300ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+               500ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation: none;
+    }
+  }
+</style>

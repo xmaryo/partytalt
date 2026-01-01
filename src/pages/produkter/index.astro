@@ -177,6 +177,14 @@ const metadata = {
     .product-variant {
       opacity: 0;
       animation: variantFadeIn 0.5s ease-out forwards;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-variant:hover {
+      transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
     }
 
     .product-variant:nth-child(1) { animation-delay: 0.1s; }
@@ -193,6 +201,15 @@ const metadata = {
         opacity: 1;
         transform: translateY(0);
       }
+    }
+
+    /* 3D image effect on hover */
+    .product-variant:hover img {
+      transform: scale(1.08) translateZ(20px);
+    }
+
+    .product-variant img {
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
   </style>
 

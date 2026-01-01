@@ -1,13 +1,19 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
+import HeroGlass from '~/components/widgets/HeroGlass.astro';
 import FeaturesAnimated from '~/components/widgets/FeaturesAnimated.astro';
 import StepsScrollTimeline from '~/components/widgets/StepsScrollTimeline.astro';
 import Content from '~/components/widgets/Content.astro';
 import FAQsAnimated from '~/components/widgets/FAQsAnimated.astro';
 import StatsAnimated from '~/components/widgets/StatsAnimated.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import TestimonialsAnimated from '~/components/widgets/TestimonialsAnimated.astro';
+
+import FloatingCTA from '~/components/ui/FloatingCTA';
+import BookingTicker from '~/components/ui/BookingTicker';
+import AvailabilityChecker from '~/components/ui/AvailabilityChecker';
+import PriceEstimator from '~/components/ui/PriceEstimator';
 
 import flextaltImg from '~/assets/images/flextalt.webp';
 import partytaltImg from '~/assets/images/partytalt.webp';
@@ -21,9 +27,15 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+  <!-- Floating CTA Button -->
+  <FloatingCTA client:load />
+
+  <!-- Live Booking Ticker -->
+  <BookingTicker client:idle />
+
   <!-- Hero Widget ******************* -->
 
-  <Hero
+  <HeroGlass
     actions={[
       {
         variant: 'primary',
@@ -46,7 +58,7 @@ const metadata = {
       </span>
       Bröllop, fester, företagsevent – vi har allt du behöver. Leverans i hela Skåne.
     </Fragment>
-  </Hero>
+  </HeroGlass>
 
   <!-- Produktkategorier *************** -->
 
@@ -164,6 +176,33 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
+
+  <!-- Testimonials ******************* -->
+
+  <TestimonialsAnimated
+    title="Vad våra kunder säger"
+    subtitle="Läs om andras upplevelser med PartyTent Helsingborg"
+    tagline="Recensioner"
+  />
+
+  <!-- Interactive Tools Section ******************* -->
+
+  <section class="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white dark:from-slate-800 dark:to-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Planera ditt event</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Börja redan nu</h2>
+        <p class="text-lg text-gray-600 dark:text-slate-400 max-w-2xl mx-auto">
+          Kolla tillgänglighet och beräkna pris direkt – helt utan förpliktelser
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <AvailabilityChecker client:visible />
+        <PriceEstimator client:visible />
+      </div>
+    </div>
+  </section>
 
   <!-- FAQ ******************* -->
 
