@@ -22,9 +22,7 @@ const products: ProductOption[] = [
   { id: 'table-rect', name: 'Bord 180x76cm', price: 75, unit: 'st', category: 'Möbler' },
   { id: 'table-round', name: 'Runt bord Ø150cm', price: 100, unit: 'st', category: 'Möbler' },
   { id: 'cocktail', name: 'Cocktailbord', price: 100, unit: 'st', category: 'Möbler' },
-  // Tillbehör
-  { id: 'lights', name: 'Ljusslinga 10m', price: 150, unit: 'st', category: 'Tillbehör' },
-  { id: 'heater', name: 'Värmare', price: 300, unit: 'st', category: 'Tillbehör' },
+  { id: 'chair-cover', name: 'Stolsöverdrag', price: 20, unit: 'st', category: 'Möbler' },
 ];
 
 export default function PriceEstimator() {

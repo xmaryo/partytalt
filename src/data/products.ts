@@ -2,17 +2,12 @@
 import partytaltLargeImg from '~/assets/images/products/partytalt-large.webp';
 import partytaltSmallImg from '~/assets/images/products/partytalt-small.webp';
 import partytaltVariant1Img from '~/assets/images/products/partytalt-variant1.webp';
-import partytaltVariant2Img from '~/assets/images/products/partytalt-variant2.webp';
 import bordRuntImg from '~/assets/images/products/bord-runt.webp';
 import bordRektangulartImg from '~/assets/images/products/bord-rektangulart.webp';
 import cocktailbordImg from '~/assets/images/products/cocktailbord.webp';
 import stolSvartImg from '~/assets/images/products/stol-svart.webp';
 import stolGraImg from '~/assets/images/products/stol-gra.webp';
 import stoloverdragImg from '~/assets/images/products/stoloverdrag.webp';
-import festbelysningImg from '~/assets/images/products/festbelysning.webp';
-import kylskapImg from '~/assets/images/products/kylskap.webp';
-import eventgolvImg from '~/assets/images/products/eventgolv.webp';
-import sittsackarImg from '~/assets/images/products/sittsackar.webp';
 
 // Existing images (keep for flextält)
 import flextaltImg from '~/assets/images/flextalt.webp';
@@ -200,65 +195,6 @@ export const categories: ProductCategory[] = [
           'Färg': 'Vit med rosett',
           'Användning': 'Bröllop, fester',
           'Tvättbar': 'Ja',
-        },
-      },
-    ],
-  },
-  {
-    id: 'tillbehor',
-    title: 'Tillbehör',
-    shortDesc: 'Belysning, kyl & mer',
-    icon: 'mdi:lightbulb-outline',
-    mainImage: festbelysningImg,
-    fullDescription: 'Komplettera din fest med belysning, kyl, golv och sittsäckar. Vi har allt du behöver för att skapa den perfekta stämningen på ditt event.',
-    features: ['Festbelysning', 'Kylskåp', 'Eventgolv', 'Sittsäckar'],
-    variants: [
-      {
-        name: 'Festbelysning',
-        description: 'Stämningsfull ljusslinga med flera lampfattningar. Skapar en magisk atmosfär i tältet.',
-        image: festbelysningImg,
-        price: '150 kr/dag',
-        specs: {
-          'Typ': 'Ljusslinga med E27-sockel',
-          'Längd': 'Flera längder tillgängliga',
-          'Lamptyp': 'LED-lampor (ingår ej)',
-          'Användning': 'Tält, utomhus, trädgård',
-        },
-      },
-      {
-        name: 'Kylskåp',
-        description: 'Professionellt kylskåp med glasdörr för drycker. Perfekt för att hålla dryckerna kalla.',
-        image: kylskapImg,
-        price: '300 kr/dag',
-        specs: {
-          'Typ': 'Displaykyl med glasdörr',
-          'Volym': 'Ca 350 liter',
-          'Temperatur': '+2°C till +10°C',
-          'El': '230V',
-        },
-      },
-      {
-        name: 'Eventgolv',
-        description: 'Sammankopplingsbart golvplattor för att skapa ett stabilt underlag i tältet.',
-        image: eventgolvImg,
-        price: '15 kr/m²/dag',
-        specs: {
-          'Storlek per platta': '40 x 40 cm',
-          'Material': 'Slitstark plast',
-          'Användning': 'Tält, gräsmatta, ojämnt underlag',
-          'Koppling': 'Klicksystem',
-        },
-      },
-      {
-        name: 'Sittsäckar',
-        description: 'Bekväma sittsäckar i olika färger. Perfekt för loungeområden och avslappnade hörn.',
-        image: sittsackarImg,
-        price: '75 kr/dag',
-        specs: {
-          'Färger': 'Svart, röd, flera',
-          'Material': 'Slitstark textil',
-          'Fyllning': 'EPS-kulor',
-          'Användning': 'Lounge, chill-out',
         },
       },
     ],

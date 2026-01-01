@@ -63,7 +63,7 @@ const metadata = {
               <!-- Features -->
               <div class="flex flex-wrap gap-2 mb-8">
                 {cat.features.map((feature) => (
-                  <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                  <span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-primary/10 text-primary text-sm font-medium">
                     <Icon name="mdi:check" class="w-4 h-4" />
                     {feature}
                   </span>
@@ -92,7 +92,7 @@ const metadata = {
                     <div class="flex items-start justify-between mb-2">
                       <h3 class="text-xl font-bold text-gray-900 dark:text-white">{variant.name}</h3>
                       {variant.price && (
-                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-semibold whitespace-nowrap ml-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-semibold whitespace-nowrap ml-2">
                           {variant.price}
                         </span>
                       )}
@@ -122,7 +122,7 @@ const metadata = {
             <div class="text-center">
               <a
                 href="/kontakt"
-                class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-white font-semibold hover:bg-primary/90 transition-colors text-lg"
+                class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-white font-semibold hover:bg-primary/90 transition-colors text-lg"
               >
                 <Icon name="mdi:email-outline" class="w-6 h-6" />
                 Få offert på {cat.title.toLowerCase()}

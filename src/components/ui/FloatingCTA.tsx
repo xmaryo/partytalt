@@ -62,7 +62,7 @@ export default function FloatingCTA({
             href={href}
             className="
               relative flex items-center gap-2
-              px-6 py-4 rounded-full
+              px-6 py-4 rounded-xl
               bg-gradient-to-r from-primary to-blue-600
               text-white font-bold text-sm
               shadow-2xl shadow-primary/40
