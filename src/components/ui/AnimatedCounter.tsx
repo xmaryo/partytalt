@@ -10,7 +10,7 @@ interface AnimatedCounterProps {
 
 export default function AnimatedCounter({ value, label }: AnimatedCounterProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: '0px' });
 
   // Extract number from value (e.g., "132K" -> 132)
   const numericValue = parseInt(value.replace(/[^0-9]/g, '')) || 0;

@@ -23,7 +23,7 @@ function StepItem({
   isLast: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: false, margin: "-20% 0px -20% 0px" });
+  const isInView = useInView(ref, { once: false, margin: "0px" });
 
   return (
     <motion.div

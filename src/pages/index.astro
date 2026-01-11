@@ -2,13 +2,12 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import HeroGlass from '~/components/widgets/HeroGlass.astro';
-import FeaturesAnimated from '~/components/widgets/FeaturesAnimated.astro';
-import StepsScrollTimeline from '~/components/widgets/StepsScrollTimeline.astro';
 import Content from '~/components/widgets/Content.astro';
-import FAQsAnimated from '~/components/widgets/FAQsAnimated.astro';
 import StatsAnimated from '~/components/widgets/StatsAnimated.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import TestimonialsAnimated from '~/components/widgets/TestimonialsAnimated.astro';
+import Image from '~/components/common/Image.astro';
+import { Icon } from 'astro-icon/components';
 
 import FloatingCTA from '~/components/ui/FloatingCTA';
 import BookingTicker from '~/components/ui/BookingTicker';
@@ -16,9 +15,7 @@ import AvailabilityChecker from '~/components/ui/AvailabilityChecker';
 import PriceEstimator from '~/components/ui/PriceEstimator';
 
 import flextaltImg from '~/assets/images/flextalt.webp';
-import partytaltImg from '~/assets/images/partytalt.webp';
-import stolarImg from '~/assets/images/stolar.webp';
-import bordImg from '~/assets/images/bord.webp';
+import { categories } from '~/data/products';
 
 const metadata = {
   title: 'Hyr Parttält i Helsingborg & Skåne',
@@ -62,82 +59,128 @@ const metadata = {
 
   <!-- Produktkategorier *************** -->
 
-  <FeaturesAnimated
-    id="produkter"
-    tagline="Vårt sortiment"
-    title="Välj bland våra produkter"
-    subtitle="Allt du behöver för ett lyckat event – från tält till möbler."
-    items={[
-      {
-        title: 'Flextält',
-        description: 'Praktiska popup-tält för mindre event, marknader och utställningar. Snabb montering.',
-        icon: 'mdi:tent',
-        callToAction: {
-          text: 'Se flextält',
-          href: '/produkter',
-        },
-      },
-      {
-        title: 'Partytält',
-        description: 'Stora partytält med fönster för bröllop, fester och företagsevent. Rymmer upp till 100 gäster.',
-        icon: 'mdi:warehouse',
-        callToAction: {
-          text: 'Se partytält',
-          href: '/produkter',
-        },
-      },
-      {
-        title: 'Stolar',
-        description: 'Eleganta vita fällstolar för alla typer av event. Bekväma och stilrena.',
-        icon: 'mdi:chair-rolling',
-        callToAction: {
-          text: 'Se stolar',
-          href: '/produkter',
-        },
-      },
-      {
-        title: 'Bord',
-        description: 'Stabila fällbord i olika storlekar. Perfekt för mingel eller sittningsmiddagar.',
-        icon: 'mdi:table-furniture',
-        callToAction: {
-          text: 'Se bord',
-          href: '/produkter',
-        },
-      },
-    ]}
-  />
+  <section id="produkter" class="py-12 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <!-- Section Header -->
+      <div class="text-center mb-10 md:mb-12">
+        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Vårt sortiment</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Produkter för ditt event</h2>
+        <p class="text-lg text-gray-600 dark:text-slate-400 max-w-2xl mx-auto">
+          Från partytält till möbler – vi har allt du behöver för ett lyckat event i Helsingborg och Skåne.
+        </p>
+      </div>
 
-  <!-- Så fungerar det **************** -->
+      <!-- Category Selector Cards -->
+      <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-12">
+        {categories.map((cat, index) => (
+          <button
+            data-category={cat.id}
+            class="category-card group flex items-center gap-3 px-4 py-3 md:px-6 md:py-4 rounded-2xl bg-white dark:bg-slate-800 border-2 border-gray-200 dark:border-slate-700 hover:border-primary dark:hover:border-primary shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
+            style={`animation-delay: ${index * 50}ms`}
+          >
+            <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl overflow-hidden flex-shrink-0">
+              <Image
+                src={cat.mainImage}
+                alt={cat.title}
+                class="w-full h-full object-cover"
+                widths={[56, 112]}
+                sizes="56px"
+                loading="eager"
+              />
+            </div>
+            <div class="text-left">
+              <span class="block font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors">{cat.title}</span>
+              <span class="block text-sm text-gray-500 dark:text-slate-400">{cat.shortDesc}</span>
+            </div>
+          </button>
+        ))}
+      </div>
 
-  <StepsScrollTimeline
-    title="Så enkelt fungerar det"
-    subtitle="Från första kontakt till färdigt event – vi tar hand om allt"
-    items={[
-      {
-        title: 'Kontakta oss',
-        description:
-          'Berätta om ditt event – datum, antal gäster och plats. Vi hjälper dig att välja rätt produkter.',
-        icon: 'mdi:message-outline',
-      },
-      {
-        title: 'Vi planerar tillsammans',
-        description:
-          'Du får en offert anpassad efter dina behov. Vi ser till att allt passar din budget och ditt event.',
-        icon: 'mdi:clipboard-list-outline',
-      },
-      {
-        title: 'Leverans & montering',
-        description:
-          'Vi levererar, monterar och hämtar – du behöver bara fokusera på att njuta av ditt event.',
-        icon: 'mdi:truck-delivery-outline',
-      },
-      {
-        title: 'Klart!',
-        description: 'Njut av ditt event medan vi tar hand om resten. Efter festen hämtar vi upp allt.',
-        icon: 'mdi:check-circle-outline',
-      },
-    ]}
-  />
+      <!-- Product Details Panel -->
+      <div id="product-panel" class="product-panel">
+        {categories.map((cat, catIndex) => (
+          <div
+            data-panel={cat.id}
+            class={`panel-content ${catIndex === 0 ? 'active' : ''}`}
+          >
+            <!-- Category Overview -->
+            <div class="mb-8">
+              <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white">{cat.title}</h3>
+              <p class="text-lg text-gray-600 dark:text-slate-400 mb-6">{cat.fullDescription}</p>
+
+              <!-- Features -->
+              <div class="flex flex-wrap gap-2 mb-8">
+                {cat.features.map((feature) => (
+                  <span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-primary/10 text-primary text-sm font-medium">
+                    <Icon name="mdi:check" class="w-4 h-4" />
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <!-- Product Variants Grid -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              {cat.variants.map((variant, varIndex) => (
+                <div class="product-variant bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-shadow">
+                  <!-- Variant Image -->
+                  <div class="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={variant.image}
+                      alt={variant.name}
+                      class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      widths={[400, 600]}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      loading={catIndex === 0 && varIndex < 2 ? "eager" : "lazy"}
+                    />
+                  </div>
+
+                  <!-- Variant Content -->
+                  <div class="p-5">
+                    <div class="flex items-start justify-between mb-2">
+                      <h4 class="text-xl font-bold text-gray-900 dark:text-white">{variant.name}</h4>
+                      {variant.price && (
+                        <span class="inline-flex items-center px-3 py-1 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-semibold whitespace-nowrap ml-2">
+                          {variant.price}
+                        </span>
+                      )}
+                    </div>
+                    <p class="text-gray-600 dark:text-slate-400 mb-4">{variant.description}</p>
+
+                    <!-- Specifications -->
+                    {variant.specs && (
+                      <div class="border-t border-gray-100 dark:border-slate-700 pt-4 mt-4">
+                        <h5 class="text-sm font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wide mb-3">Specifikationer</h5>
+                        <dl class="grid grid-cols-2 gap-2 text-sm">
+                          {Object.entries(variant.specs).map(([key, value]) => (
+                            <div class="contents">
+                              <dt class="text-gray-500 dark:text-slate-400">{key}:</dt>
+                              <dd class="text-gray-900 dark:text-white font-medium">{value}</dd>
+                            </div>
+                          ))}
+                        </dl>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center">
+              <a
+                href="/kontakt"
+                class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-white font-semibold hover:bg-primary/90 transition-colors text-lg"
+              >
+                <Icon name="mdi:email-outline" class="w-6 h-6" />
+                Få offert på {cat.title.toLowerCase()}
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <!-- Varför välja oss **************** -->
 
@@ -204,41 +247,6 @@ const metadata = {
     </div>
   </section>
 
-  <!-- FAQ ******************* -->
-
-  <FAQsAnimated
-    title="Vanliga frågor"
-    subtitle="Har du funderingar? Här hittar du svar på de vanligaste frågorna."
-    tagline="FAQ"
-    items={[
-      {
-        title: 'Hur långt i förväg ska jag boka?',
-        description:
-          'Vi rekommenderar att boka minst 2-4 veckor innan ditt event, särskilt under högsäsong (maj-september). Vid större event, boka gärna tidigare.',
-      },
-      {
-        title: 'Ingår leverans och montering?',
-        description:
-          'Ja, vi erbjuder leverans, montering och hämtning. Pris beror på avstånd och omfattning – kontakta oss för offert.',
-      },
-      {
-        title: 'Vilka områden levererar ni till?',
-        description:
-          'Vi levererar i hela Skåne med fokus på Helsingborg, Landskrona, Ängelholm, Höganäs, Bjuv, Klippan och omnejd.',
-      },
-      {
-        title: 'Vad händer om det blir dåligt väder?',
-        description:
-          'Våra tält är robusta och tål normalt väder. Vid extrem vädervarning kontaktar vi dig för att diskutera lösningar.',
-      },
-      {
-        title: 'Kan jag hyra för flera dagar?',
-        description:
-          'Absolut! Vi erbjuder flexibla hyresperioder. Kontakta oss för priser vid längre hyrestider.',
-      },
-    ]}
-  />
-
   <!-- Stats ******************* -->
 
   <StatsAnimated
@@ -277,3 +285,109 @@ const metadata = {
     </Fragment>
   </CallToAction>
 </Layout>
+
+<style>
+  .category-card {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.4s cubic-bezier(0.05, 0.7, 0.1, 1) forwards;
+  }
+
+  .category-card.active {
+    border-color: var(--aw-color-primary, rgb(26 115 232));
+    background: linear-gradient(135deg, rgba(26, 115, 232, 0.05) 0%, rgba(26, 115, 232, 0.02) 100%);
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .panel-content {
+    display: none;
+    opacity: 0;
+  }
+
+  .panel-content.active {
+    display: block;
+    animation: panelFadeIn 0.4s cubic-bezier(0.05, 0.7, 0.1, 1) forwards;
+  }
+
+  @keyframes panelFadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .product-variant {
+    opacity: 0;
+    animation: variantFadeIn 0.5s ease-out forwards;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .product-variant:hover {
+    transform: translateY(-8px);
+  }
+
+  .product-variant:nth-child(1) { animation-delay: 0.1s; }
+  .product-variant:nth-child(2) { animation-delay: 0.2s; }
+  .product-variant:nth-child(3) { animation-delay: 0.3s; }
+  .product-variant:nth-child(4) { animation-delay: 0.4s; }
+
+  @keyframes variantFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  // Category selector functionality
+  function initProductSelector() {
+    const categoryCards = document.querySelectorAll('.category-card');
+    const panels = document.querySelectorAll('.panel-content');
+
+    if (categoryCards.length === 0) return;
+
+    // Set first card as active on load
+    categoryCards[0]?.classList.add('active');
+
+    categoryCards.forEach((card) => {
+      card.addEventListener('click', () => {
+        const categoryId = card.getAttribute('data-category');
+
+        // Update active card
+        categoryCards.forEach((c) => c.classList.remove('active'));
+        card.classList.add('active');
+
+        // Update visible panel
+        panels.forEach((panel) => {
+          panel.classList.remove('active');
+          if (panel.getAttribute('data-panel') === categoryId) {
+            panel.classList.add('active');
+          }
+        });
+      });
+    });
+  }
+
+  // Initialize on load
+  initProductSelector();
+
+  // Re-initialize after View Transitions
+  document.addEventListener('astro:after-swap', initProductSelector);
+</script>

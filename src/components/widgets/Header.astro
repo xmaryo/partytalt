@@ -211,9 +211,9 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 
-    /* Base state (top of page) - full width, no border radius */
+    /* Base state (top of page) - full width, rounded corners */
     max-width: 100%;
-    border-radius: 0;
+    border-radius: 9999px;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);

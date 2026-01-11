@@ -4,7 +4,7 @@ export const headerData = {
   links: [
     {
       text: 'Produkter',
-      href: getPermalink('/produkter'),
+      href: '/#produkter',
     },
     {
       text: 'Om oss',
@@ -27,7 +27,7 @@ export const footerData = {
     {
       title: 'Information',
       links: [
-        { text: 'Produkter', href: getPermalink('/produkter') },
+        { text: 'Produkter', href: '/#produkter' },
         { text: 'FAQ', href: getPermalink('/faq') },
         { text: 'Galleri', href: getPermalink('/galleri') },
       ],

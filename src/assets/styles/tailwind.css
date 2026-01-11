@@ -140,6 +140,21 @@
 /* Header scroll state is now handled in Header.astro component */
 
 /* Mobile menu expansion */
+#header.expanded {
+  border-radius: 24px !important;
+}
+
+#header.expanded .header-inner {
+  border-radius: 24px !important;
+}
+
+/* Hide theme toggle when menu is expanded on mobile */
+@media (max-width: 767px) {
+  #header.expanded [data-aw-toggle-color-scheme] {
+    display: none !important;
+  }
+}
+
 #header.expanded nav {
   display: block !important;
   position: fixed;
@@ -156,9 +171,40 @@
   overflow-y: auto;
 }
 
+#header.expanded nav ul {
+  display: flex !important;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#header.expanded nav ul li {
+  display: block !important;
+}
+
+#header.expanded nav ul li a {
+  display: flex !important;
+  color: rgb(32 33 36);
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+#header.expanded nav ul li a:hover {
+  background: rgb(241 243 244);
+}
+
 .dark #header.expanded nav {
   background: rgb(15 23 42);
   border-color: rgb(51 65 85);
+}
+
+.dark #header.expanded nav ul li a {
+  color: rgb(232 234 237);
+}
+
+.dark #header.expanded nav ul li a:hover {
+  background: rgb(30 41 59);
 }
 
 /* Dropdown M3 styles */
