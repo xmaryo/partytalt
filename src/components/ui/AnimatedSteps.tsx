@@ -20,7 +20,7 @@ const stepVariants = {
     transition: {
       delay: i * 0.2,
       duration: 0.5,
-      ease: [0.4, 0, 0.2, 1]
+      ease: [0.4, 0, 0.2, 1] as [number, number, number, number]
     }
   })
 };
@@ -32,7 +32,7 @@ const lineVariants = {
     transition: {
       delay: i * 0.2 + 0.3,
       duration: 0.4,
-      ease: [0.4, 0, 0.2, 1]
+      ease: [0.4, 0, 0.2, 1] as [number, number, number, number]
     }
   })
 };
@@ -45,7 +45,7 @@ const iconVariants = {
     transition: {
       delay: i * 0.2,
       duration: 0.5,
-      type: 'spring',
+      type: 'spring' as const,
       stiffness: 200,
       damping: 15
     }
