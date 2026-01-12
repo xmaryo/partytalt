@@ -15,7 +15,7 @@ export const headerData = {
       href: getPermalink('/kontakt'),
     },
   ],
-  actions: [{ text: 'Få offert', href: getPermalink('/kontakt'), variant: 'primary' }],
+  actions: [{ text: 'Boka nu', href: getPermalink('/kontakt'), variant: 'primary' }],
 };
 
 export const footerData = {
@@ -44,8 +44,5 @@ export const footerData = {
     { ariaLabel: 'Facebook', icon: 'mdi:facebook', href: 'https://www.facebook.com/share/1ASDkHWBNC/' },
     { ariaLabel: 'Instagram', icon: 'mdi:instagram', href: '#' },
   ],
-  footNote: `
-    © ${new Date().getFullYear()} PartyTent Helsingborg. Alla rättigheter förbehållna.<br/>
-    <span class="text-sm">Uthyrning av partytält i hela Skåne</span>
-  `,
+  footNote: `© ${new Date().getFullYear()} PartyTent Helsingborg. Alla rättigheter förbehållna.`,
 };

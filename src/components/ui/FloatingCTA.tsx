@@ -8,7 +8,7 @@ interface FloatingCTAProps {
 }
 
 export default function FloatingCTA({
-  text = 'Få offert',
+  text = 'Boka nu',
   href = '/kontakt',
   showAfterScroll = 500,
 }: FloatingCTAProps) {
@@ -45,7 +45,7 @@ export default function FloatingCTA({
           {/* Pulse ring */}
           {isPulsing && (
             <motion.div
-              className="absolute inset-0 rounded-full bg-primary"
+              className="absolute inset-0 rounded-2xl bg-primary"
               animate={{
                 scale: [1, 1.5, 1.5],
                 opacity: [0.5, 0, 0],
@@ -61,8 +61,8 @@ export default function FloatingCTA({
           <motion.a
             href={href}
             className="
-              relative flex items-center gap-2
-              px-6 py-4 rounded-xl
+              relative flex items-center justify-center gap-2
+              p-4 md:px-6 md:py-4 rounded-2xl
               bg-gradient-to-r from-primary to-blue-600
               text-white font-bold text-sm
               shadow-2xl shadow-primary/40
@@ -74,7 +74,7 @@ export default function FloatingCTA({
           >
             {/* Icon */}
             <motion.svg
-              className="w-5 h-5"
+              className="w-6 h-6 md:w-5 md:h-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -88,7 +88,7 @@ export default function FloatingCTA({
                 d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
               />
             </motion.svg>
-            {text}
+            <span className="hidden md:inline">{text}</span>
           </motion.a>
         </motion.div>
       )}

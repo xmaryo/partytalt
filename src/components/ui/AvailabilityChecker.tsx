@@ -137,7 +137,7 @@ export default function AvailabilityChecker() {
               transition-all duration-300
             "
           >
-            Få offert för detta datum
+            Boka nu för detta datum
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
