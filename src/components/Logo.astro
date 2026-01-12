@@ -1,11 +1,26 @@
 ---
-import { SITE } from 'astrowind:config';
-import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import logoLight from '~/assets/images/logo/logo-light.png';
+import logoDark from '~/assets/images/logo/logo-dark.png';
 ---
 
-<span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white flex items-center gap-2"
->
-  <Icon name="mdi:tent" class="w-8 h-8 text-primary" />
-  <span>Party Tält</span>
+<span class="self-center flex items-center relative">
+  <!-- Light theme: show light logo (visible on white background) -->
+  <Image
+    src={logoLight}
+    alt="Party Tält Helsingborg"
+    class="h-24 md:h-28 w-auto dark:hidden absolute top-1/2 -translate-y-1/2 left-0"
+    width={160}
+    height={160}
+  />
+  <!-- Dark theme: show dark logo (visible on dark background) -->
+  <Image
+    src={logoDark}
+    alt="Party Tält Helsingborg"
+    class="h-24 md:h-28 w-auto hidden dark:block absolute top-1/2 -translate-y-1/2 left-0"
+    width={160}
+    height={160}
+  />
+  <!-- Spacer to maintain clickable area -->
+  <span class="w-24 md:w-28 h-14 md:h-16"></span>
 </span>

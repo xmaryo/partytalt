@@ -1,8 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import HeroGlass from '~/components/widgets/HeroGlass.astro';
-import Content from '~/components/widgets/Content.astro';
+import Hero from '~/components/widgets/Hero.astro';
 import StatsAnimated from '~/components/widgets/StatsAnimated.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import TestimonialsAnimated from '~/components/widgets/TestimonialsAnimated.astro';
@@ -10,11 +9,7 @@ import Image from '~/components/common/Image.astro';
 import { Icon } from 'astro-icon/components';
 
 import FloatingCTA from '~/components/ui/FloatingCTA';
-import BookingTicker from '~/components/ui/BookingTicker';
-import AvailabilityChecker from '~/components/ui/AvailabilityChecker';
-import PriceEstimator from '~/components/ui/PriceEstimator';
 
-import flextaltImg from '~/assets/images/flextalt.webp';
 import { categories } from '~/data/products';
 
 const metadata = {
@@ -27,71 +22,49 @@ const metadata = {
   <!-- Floating CTA Button -->
   <FloatingCTA client:load />
 
-  <!-- Live Booking Ticker -->
-  <BookingTicker client:idle />
 
   <!-- Hero Widget ******************* -->
 
-  <HeroGlass
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Få offert',
-        href: '/kontakt',
-        icon: 'mdi:email-outline',
-      },
-      { text: 'Se produkter', href: '#produkter' },
-    ]}
+  <Hero
     image={{ src: '~/assets/images/hero-image.png', alt: 'Parttält i Helsingborg' }}
   >
     <Fragment slot="title">
-      Hyr parttält i
-      <span class="text-accent dark:text-white"> Helsingborg</span> & Skåne
+      Partytält
+      <span class="text-accent dark:text-white"> Helsingborg</span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        Komplett uthyrning av parttält, bord och stolar för ditt nästa event.
+        Helhetslösning för fester i Helsingborg,
       </span>
-      Bröllop, fester, företagsevent – vi har allt du behöver. Leverans i hela Skåne.
+      Vi erbjuder tältuthyrning med komplett utrustning
     </Fragment>
-  </HeroGlass>
+  </Hero>
 
   <!-- Produktkategorier *************** -->
 
   <section id="produkter" class="py-12 md:py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <!-- Section Header -->
-      <div class="text-center mb-10 md:mb-12">
-        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Vårt sortiment</p>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Produkter för ditt event</h2>
-        <p class="text-lg text-gray-600 dark:text-slate-400 max-w-2xl mx-auto">
-          Från partytält till möbler – vi har allt du behöver för ett lyckat event i Helsingborg och Skåne.
-        </p>
-      </div>
 
       <!-- Category Selector Cards -->
-      <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-12">
+      <div class="flex flex-wrap justify-center gap-4 md:gap-6 mb-12">
         {categories.map((cat, index) => (
           <button
             data-category={cat.id}
-            class="category-card group flex items-center gap-3 px-4 py-3 md:px-6 md:py-4 rounded-2xl bg-white dark:bg-slate-800 border-2 border-gray-200 dark:border-slate-700 hover:border-primary dark:hover:border-primary shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
+            class="category-card group flex flex-col items-center gap-2 px-4 py-4 md:px-6 md:py-5 rounded-2xl bg-white dark:bg-slate-800 border-2 border-gray-200 dark:border-slate-700 hover:border-primary dark:hover:border-primary shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
             style={`animation-delay: ${index * 50}ms`}
           >
-            <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl overflow-hidden flex-shrink-0">
+            <div class="w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
               <Image
-                src={cat.mainImage}
+                src={cat.iconImage}
                 alt={cat.title}
-                class="w-full h-full object-cover"
-                widths={[56, 112]}
-                sizes="56px"
+                class="w-full h-full object-contain"
+                widths={[80, 160]}
+                sizes="80px"
                 loading="eager"
               />
             </div>
-            <div class="text-left">
-              <span class="block font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors">{cat.title}</span>
-              <span class="block text-sm text-gray-500 dark:text-slate-400">{cat.shortDesc}</span>
-            </div>
+            <span class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors text-center">{cat.title}</span>
           </button>
         ))}
       </div>
@@ -166,59 +139,11 @@ const metadata = {
               ))}
             </div>
 
-            <!-- CTA -->
-            <div class="text-center">
-              <a
-                href="/kontakt"
-                class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-white font-semibold hover:bg-primary/90 transition-colors text-lg"
-              >
-                <Icon name="mdi:email-outline" class="w-6 h-6" />
-                Få offert på {cat.title.toLowerCase()}
-              </a>
-            </div>
           </div>
         ))}
       </div>
     </div>
   </section>
-
-  <!-- Varför välja oss **************** -->
-
-  <Content
-    isReversed
-    tagline="Varför PartyTent?"
-    title="Din lokala partner för eventuthyrning"
-    items={[
-      {
-        title: 'Lokalt i Helsingborg',
-        description:
-          'Vi är baserade i Helsingborg och känner området väl. Snabb service och personlig kontakt.',
-      },
-      {
-        title: 'Komplett lösning',
-        description:
-          'Allt på ett ställe – tält, möbler och tillbehör. Du slipper jaga runt till olika leverantörer.',
-      },
-      {
-        title: 'Leverans i hela Skåne',
-        description:
-          'Vi levererar till Helsingborg, Landskrona, Ängelholm, Höganäs, Lund, Malmö och övriga Skåne.',
-      },
-    ]}
-    image={{
-      src: flextaltImg,
-      alt: 'Flextält för event',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Vi gör det enkelt</h3>
-      Från första kontakt till att vi hämtar utrustningen – vi tar hand om allt.
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
 
   <!-- Testimonials ******************* -->
 
@@ -228,24 +153,6 @@ const metadata = {
     tagline="Recensioner"
   />
 
-  <!-- Interactive Tools Section ******************* -->
-
-  <section class="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white dark:from-slate-800 dark:to-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-12">
-        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Planera ditt event</p>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Börja redan nu</h2>
-        <p class="text-lg text-gray-600 dark:text-slate-400 max-w-2xl mx-auto">
-          Kolla tillgänglighet och beräkna pris direkt – helt utan förpliktelser
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
-        <AvailabilityChecker client:visible />
-        <PriceEstimator client:visible />
-      </div>
-    </div>
-  </section>
 
   <!-- Stats ******************* -->
 

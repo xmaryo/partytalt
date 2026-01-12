@@ -4,16 +4,18 @@ import Hero from '~/components/widgets/Hero.astro';
 import FAQsAnimated from '~/components/widgets/FAQsAnimated.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
+import fragorImg from '~/assets/images/fragor.png';
+
 const metadata = {
-  title: 'Vanliga frågor (FAQ)',
+  title: 'Vanliga frågor',
 };
 ---
 
 <Layout metadata={metadata}>
   <Hero
-    tagline="FAQ"
     title="Vanliga frågor"
     subtitle="Här hittar du svar på de vanligaste frågorna om vår uthyrning. Hittar du inte svaret du söker? Kontakta oss!"
+    image={{ src: fragorImg, alt: 'Vanliga frågor', format: 'png', width: 300, height: 300 }}
   />
 
   <FAQsAnimated
@@ -87,7 +89,7 @@ const metadata = {
     items={[
       {
         title: 'Vad kostar det att hyra?',
-        description: 'Priserna varierar beroende på produkt, antal och period. Se vår prissida för riktpriser eller kontakta oss för en exakt offert.',
+        description: 'Du hittar riktpriser för alla våra produkter direkt på startsidan. Priserna är per dag och kan variera beroende på antal och hyrperiod. Kontakta oss för en exakt offert anpassad efter ditt event.',
       },
       {
         title: 'Finns det rabatt vid större beställningar?',

@@ -8,9 +8,19 @@ import cocktailbordImg from '~/assets/images/products/cocktailbord.webp';
 import stolSvartImg from '~/assets/images/products/stol-svart.webp';
 import stolGraImg from '~/assets/images/products/stol-gra.webp';
 import stoloverdragImg from '~/assets/images/products/stoloverdrag.webp';
+import festbelysningImg from '~/assets/images/products/festbelysning.webp';
+import kylskapImg from '~/assets/images/products/kylskap.webp';
+import eventgolvImg from '~/assets/images/products/eventgolv.webp';
+import sittsackarImg from '~/assets/images/products/sittsackar.webp';
 
 // Existing images (keep for flextält)
 import flextaltImg from '~/assets/images/flextalt.webp';
+
+// 3D Icons for category selector
+import taltIcon from '~/assets/images/icons/talt-icon.png';
+import bordIcon from '~/assets/images/icons/bord-icon.png';
+import stolarIcon from '~/assets/images/icons/stolar-icon.png';
+import kylskapIcon from '~/assets/images/icons/kylskap-icon.png';
 
 export interface ProductVariant {
   name: string;
@@ -26,6 +36,7 @@ export interface ProductCategory {
   shortDesc: string;
   icon: string;
   mainImage: ImageMetadata;
+  iconImage: ImageMetadata; // 3D icon for category selector
   fullDescription: string;
   features: string[];
   variants: ProductVariant[];
@@ -38,6 +49,7 @@ export const categories: ProductCategory[] = [
     shortDesc: 'Tält för alla event',
     icon: 'mdi:warehouse',
     mainImage: partytaltLargeImg,
+    iconImage: taltIcon,
     fullDescription: 'Oavsett om det är student, födelsedag, bröllop eller sommarfest har vi rätt tält för dig. Våra partytält är eleganta, vädertåliga och rymmer allt från 20 till 100 gäster.',
     features: ['Vattentät PVC-duk', 'Galvaniserad stålram', 'Eleganta fönster', 'Modulär design'],
     variants: [
@@ -97,6 +109,7 @@ export const categories: ProductCategory[] = [
     shortDesc: 'Fällbord & cocktailbord',
     icon: 'mdi:table-furniture',
     mainImage: bordRektangulartImg,
+    iconImage: bordIcon,
     fullDescription: 'Stabila fällbord i flera storlekar – perfekta för middagar, bufféer och mingel. Lätta att ställa upp och ta ner, med bordsskiva i högdensitetspolyeten och kraftig stålram.',
     features: ['Lätta att fälla', 'HDPE bordsskiva', 'Stålram', 'Flera storlekar'],
     variants: [
@@ -158,6 +171,7 @@ export const categories: ProductCategory[] = [
     shortDesc: 'Fällstolar & tillbehör',
     icon: 'mdi:chair-rolling',
     mainImage: stolSvartImg,
+    iconImage: stolarIcon,
     fullDescription: 'Eleganta fällstolar som passar perfekt för bröllop, fester och andra event. Bekväma, lätta att hantera och stapelbara för enkel transport.',
     features: ['Stapelbara', 'Pulverlackerad stålram', 'Lätta', 'Bekväma'],
     variants: [
@@ -195,6 +209,66 @@ export const categories: ProductCategory[] = [
           'Färg': 'Vit med rosett',
           'Användning': 'Bröllop, fester',
           'Tvättbar': 'Ja',
+        },
+      },
+    ],
+  },
+  {
+    id: 'tillbehor',
+    title: 'Tillbehör',
+    shortDesc: 'Belysning, kyl & mer',
+    icon: 'mdi:lightbulb-outline',
+    mainImage: festbelysningImg,
+    iconImage: kylskapIcon,
+    fullDescription: 'Komplettera din fest med belysning, kyl, golv och sittsäckar. Vi har allt du behöver för att skapa den perfekta stämningen på ditt event.',
+    features: ['Festbelysning', 'Kylskåp', 'Eventgolv', 'Sittsäckar'],
+    variants: [
+      {
+        name: 'Festbelysning',
+        description: 'Stämningsfull ljusslinga med flera lampfattningar. Skapar en magisk atmosfär i tältet.',
+        image: festbelysningImg,
+        price: '150 kr/dag',
+        specs: {
+          'Typ': 'Ljusslinga med E27-sockel',
+          'Längd': 'Flera längder tillgängliga',
+          'Lamptyp': 'LED-lampor (ingår ej)',
+          'Användning': 'Tält, utomhus, trädgård',
+        },
+      },
+      {
+        name: 'Kylskåp',
+        description: 'Professionellt kylskåp med glasdörr för drycker. Perfekt för att hålla dryckerna kalla.',
+        image: kylskapImg,
+        price: '300 kr/dag',
+        specs: {
+          'Typ': 'Displaykyl med glasdörr',
+          'Volym': 'Ca 350 liter',
+          'Temperatur': '+2°C till +10°C',
+          'El': '230V',
+        },
+      },
+      {
+        name: 'Eventgolv',
+        description: 'Sammankopplingsbart golvplattor för att skapa ett stabilt underlag i tältet.',
+        image: eventgolvImg,
+        price: '15 kr/m²/dag',
+        specs: {
+          'Storlek per platta': '40 x 40 cm',
+          'Material': 'Slitstark plast',
+          'Användning': 'Tält, gräsmatta, ojämnt underlag',
+          'Koppling': 'Klicksystem',
+        },
+      },
+      {
+        name: 'Sittsäckar',
+        description: 'Bekväma sittsäckar i olika färger. Perfekt för loungeområden och avslappnade hörn.',
+        image: sittsackarImg,
+        price: '75 kr/dag',
+        specs: {
+          'Färger': 'Svart, röd, flera',
+          'Material': 'Slitstark textil',
+          'Fyllning': 'EPS-kulor',
+          'Användning': 'Lounge, chill-out',
         },
       },
     ],

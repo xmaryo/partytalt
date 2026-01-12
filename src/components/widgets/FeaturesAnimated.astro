@@ -1,7 +1,6 @@
 ---
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
-import AnimatedItemGrid from '~/components/ui/AnimatedItemGrid';
 import { Icon } from 'astro-icon/components';
 import type { Features as Props } from '~/types';
 
@@ -19,19 +18,11 @@ const {
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
-
-// Transform items for AnimatedItemGrid - we need to handle icons server-side
-const transformedItems = items.map((item) => ({
-  title: item.title,
-  description: item.description,
-  callToAction: item.callToAction,
-}));
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
 
-  <!-- Animated grid with Framer Motion -->
   <div class={`grid mx-auto gap-6 md:gap-8 items-stretch ${
     columns === 4
       ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
@@ -43,46 +34,48 @@ const transformedItems = items.map((item) => ({
   }`}>
     {items.map((item, index) => (
       <div
-        class="animated-card-wrapper h-full"
-        style={`--delay: ${index * 0.1}s`}
+        class="feature-card group h-full"
+        style={`--delay: ${index * 0.08}s`}
       >
-        <div
-          class={`
-            flex flex-row h-full p-6 rounded-2xl
-            bg-white dark:bg-slate-800/50
-            border border-gray-100 dark:border-slate-700
-            shadow-m3-1 hover:shadow-m3-2
-            transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]
-            hover:-translate-y-2 active:scale-[0.98]
-            animate-card-enter
-          `}
-        >
-          <div class="flex justify-center">
-            {(item.icon || defaultIcon) && (
-              <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20 mr-4 rtl:mr-0 rtl:ml-4">
+        <div class="feature-card-inner h-full flex flex-col items-center text-center p-8 rounded-3xl relative overflow-hidden">
+          <!-- Gradient background on hover -->
+          <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+          <!-- Icon container with gradient -->
+          {(item.icon || defaultIcon) && (
+            <div class="feature-icon relative z-10 mb-6">
+              <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg shadow-primary/25 group-hover:shadow-xl group-hover:shadow-primary/30 group-hover:scale-110 transition-all duration-300">
                 <Icon
                   name={item.icon || defaultIcon}
-                  class="w-6 h-6 text-primary"
+                  class="w-8 h-8 text-white"
                 />
               </div>
+              <!-- Decorative ring -->
+              <div class="absolute -inset-2 rounded-3xl border-2 border-primary/20 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
+            </div>
+          )}
+
+          <!-- Content -->
+          <div class="relative z-10 flex-1 flex flex-col">
+            {item.title && (
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors duration-300">
+                {item.title}
+              </h3>
             )}
-          </div>
-          <div class="mt-0.5 flex-1">
-            {item.title && <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{item.title}</h3>}
             {item.description && (
               <p
-                class={`${item.title ? 'mt-2' : ''} text-muted text-sm leading-relaxed`}
+                class="text-gray-600 dark:text-slate-400 leading-relaxed flex-1"
                 set:html={item.description}
               />
             )}
             {item.callToAction && (
-              <div class={`${item.title || item.description ? 'mt-4' : ''}`}>
+              <div class="mt-5">
                 <a
                   href={item.callToAction.href}
-                  class="text-primary hover:text-primary/80 text-sm font-medium transition-colors inline-flex items-center gap-1"
+                  class="inline-flex items-center gap-2 text-primary hover:text-secondary font-semibold transition-colors group/link"
                 >
                   {item.callToAction.text}
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                   </svg>
                 </a>
@@ -99,39 +92,69 @@ const transformedItems = items.map((item) => ({
   @keyframes cardEnter {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(40px) scale(0.95);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
   }
 
-  .animated-card-wrapper {
+  .feature-card {
+    animation: cardEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: var(--delay);
     opacity: 0;
   }
 
-  .animated-card-wrapper.in-view {
-    animation: cardEnter 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    animation-delay: var(--delay);
+  .feature-card-inner {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.7) 100%
+    );
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.05),
+      0 10px 20px -5px rgba(0, 0, 0, 0.05),
+      0 0 0 1px rgba(0, 0, 0, 0.02);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .feature-card:hover .feature-card-inner {
+    transform: translateY(-8px);
+    box-shadow:
+      0 12px 24px -8px rgba(26, 115, 232, 0.15),
+      0 20px 40px -12px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(26, 115, 232, 0.1);
+    border-color: rgba(26, 115, 232, 0.2);
+  }
+
+  :global(.dark) .feature-card-inner {
+    background: linear-gradient(
+      135deg,
+      rgba(30, 41, 59, 0.9) 0%,
+      rgba(30, 41, 59, 0.7) 100%
+    );
+    border: 1px solid rgba(71, 85, 105, 0.5);
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.2),
+      0 10px 20px -5px rgba(0, 0, 0, 0.2);
+  }
+
+  :global(.dark) .feature-card:hover .feature-card-inner {
+    box-shadow:
+      0 12px 24px -8px rgba(26, 115, 232, 0.3),
+      0 20px 40px -12px rgba(0, 0, 0, 0.3);
+    border-color: rgba(26, 115, 232, 0.4);
+  }
+
+  @keyframes iconPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  .feature-card:hover .feature-icon > div:first-child {
+    animation: iconPulse 2s ease-in-out infinite;
   }
 </style>
-
-<script>
-  // Intersection Observer for scroll-triggered animations
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1, rootMargin: '0px' }
-  );
-
-  document.querySelectorAll('.animated-card-wrapper').forEach((el) => {
-    observer.observe(el);
-  });
-</script>

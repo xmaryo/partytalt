@@ -1,8 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
 import Contact from '~/components/widgets/Contact.astro';
-import Features from '~/components/widgets/Features.astro';
 
 const metadata = {
   title: 'Kontakt',
@@ -10,15 +8,9 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero
-    tagline="Kontakta oss"
-    title="Vi hjälper dig gärna"
-    subtitle="Har du frågor eller vill boka? Fyll i formuläret nedan eller kontakta oss direkt. Vi svarar inom 24 timmar."
-  />
-
   <Contact
-    title="Skicka en förfrågan"
-    subtitle="Berätta om ditt event så återkommer vi med en offert."
+    title="Kontakta oss"
+    subtitle="Har du frågor eller vill boka? Fyll i formuläret nedan så återkommer vi inom 24 timmar."
     inputs={[
       {
         type: 'text',
@@ -53,7 +45,6 @@ const metadata = {
     button={{
       text: 'Skicka förfrågan',
     }}
-    description="Vi återkommer inom 24 timmar med en offert."
   />
 
   <!-- Andra sätt att nå oss -->

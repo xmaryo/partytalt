@@ -1,11 +1,10 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import FeaturesAnimated from '~/components/widgets/FeaturesAnimated.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
-import partytaltImg from '~/assets/images/partytalt.webp';
+import omOssImg from '~/assets/images/om-oss-hero.jpeg';
 
 const metadata = {
   title: 'Om oss',
@@ -13,16 +12,10 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero
-    tagline="Om PartyTent"
-    title="Din lokala partner för eventuthyrning"
-    subtitle="Vi hjälper dig att skapa minnesvärda event i Helsingborg och Skåne. Med personlig service och kvalitetsprodukter gör vi ditt event till en succé."
-  />
-
   <Content
     isReversed
     title="Oavsett vad ni firar, har vi rätt tält för dig"
-    image={{ src: partytaltImg, alt: 'Partytält' }}
+    image={{ src: omOssImg, alt: 'Event med partytält' }}
   >
     <Fragment slot="content">
       <p class="mb-4">
