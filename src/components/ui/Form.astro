@@ -71,7 +71,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
     button && (
       <div class="mt-10 grid">
         <Button variant="primary" type="submit">
-          {typeof button === 'string' ? button : button.text || 'Skicka'}
+          {button || 'Skicka'}
         </Button>
       </div>
     )

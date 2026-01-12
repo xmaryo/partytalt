@@ -26,16 +26,18 @@ const cardVariants = {
     transition: {
       delay: i * 0.1,
       duration: 0.5,
-      ease: [0.4, 0, 0.2, 1] as [number, number, number, number]
-    }
-  })
+      ease: [0.4, 0, 0.2, 1] as [number, number, number, number],
+    },
+  }),
 };
 
 export default function AnimatedItemGrid({ items, columns = 2 }: AnimatedItemGridProps) {
   const gridCols =
-    columns === 4 ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2' :
-    columns === 3 ? 'lg:grid-cols-3 sm:grid-cols-2' :
-    'sm:grid-cols-2';
+    columns === 4
+      ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
+      : columns === 3
+        ? 'lg:grid-cols-3 sm:grid-cols-2'
+        : 'sm:grid-cols-2';
 
   return (
     <div className={`grid mx-auto gap-6 md:gap-8 ${gridCols}`}>
@@ -49,7 +51,7 @@ export default function AnimatedItemGrid({ items, columns = 2 }: AnimatedItemGri
           variants={cardVariants}
           whileHover={{
             y: -8,
-            transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] }
+            transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
           }}
           whileTap={{ scale: 0.98 }}
           className={`
@@ -68,11 +70,7 @@ export default function AnimatedItemGrid({ items, columns = 2 }: AnimatedItemGri
             </div>
           )}
           <div className="mt-0.5 flex-1">
-            {item.title && (
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                {item.title}
-              </h3>
-            )}
+            {item.title && <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{item.title}</h3>}
             {item.description && (
               <p
                 className={`${item.title ? 'mt-2' : ''} text-muted text-sm leading-relaxed`}

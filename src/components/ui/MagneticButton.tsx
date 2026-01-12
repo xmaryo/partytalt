@@ -8,14 +8,9 @@ interface MagneticButtonProps {
   strength?: number;
 }
 
-export default function MagneticButton({
-  children,
-  href,
-  className = '',
-  strength = 0.3,
-}: MagneticButtonProps) {
+export default function MagneticButton({ children, href, className = '', strength = 0.3 }: MagneticButtonProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
+  const [_isHovered, setIsHovered] = useState(false);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);

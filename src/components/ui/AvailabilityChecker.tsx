@@ -29,19 +29,17 @@ export default function AvailabilityChecker() {
 
   return (
     <div className="w-full max-w-md mx-auto">
-      <div className="
+      <div
+        className="
         bg-white dark:bg-slate-800
         rounded-2xl shadow-xl
         border border-gray-100 dark:border-slate-700
         p-6
         backdrop-blur-sm
-      ">
-        <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-          Kolla tillgänglighet
-        </h3>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-          Välj datum för ditt event
-        </p>
+      "
+      >
+        <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Kolla tillgänglighet</h3>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Välj datum för ditt event</p>
 
         <div className="relative">
           <input
@@ -64,7 +62,12 @@ export default function AvailabilityChecker() {
           {/* Calendar icon */}
           <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
             <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
             </svg>
           </div>
         </div>
@@ -93,7 +96,12 @@ export default function AvailabilityChecker() {
               {status === 'available' && (
                 <div className="flex items-center gap-2 p-3 bg-green-50 dark:bg-green-900/20 rounded-xl">
                   <div className="w-8 h-8 bg-green-100 dark:bg-green-900/40 rounded-full flex items-center justify-center">
-                    <svg className="w-5 h-5 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg
+                      className="w-5 h-5 text-green-600 dark:text-green-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
@@ -107,8 +115,18 @@ export default function AvailabilityChecker() {
               {status === 'limited' && (
                 <div className="flex items-center gap-2 p-3 bg-amber-50 dark:bg-amber-900/20 rounded-xl">
                   <div className="w-8 h-8 bg-amber-100 dark:bg-amber-900/40 rounded-full flex items-center justify-center">
-                    <svg className="w-5 h-5 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    <svg
+                      className="w-5 h-5 text-amber-600 dark:text-amber-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                      />
                     </svg>
                   </div>
                   <div>

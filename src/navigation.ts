@@ -15,7 +15,7 @@ export const headerData = {
       href: getPermalink('/kontakt'),
     },
   ],
-  actions: [{ text: 'Boka nu', href: getPermalink('/kontakt'), variant: 'primary' }],
+  actions: [{ text: 'Boka nu', href: getPermalink('/kontakt'), variant: 'primary' as const }],
 };
 
 export const footerData = {
@@ -44,5 +44,5 @@ export const footerData = {
     { ariaLabel: 'Facebook', icon: 'mdi:facebook', href: 'https://www.facebook.com/share/1ASDkHWBNC/' },
     { ariaLabel: 'Instagram', icon: 'mdi:instagram', href: '#' },
   ],
-  footNote: `© ${new Date().getFullYear()} PartyTent Helsingborg. Alla rättigheter förbehållna.`,
+  footNote: `© ${new Date().getFullYear()} Partytält Helsingborg. Alla rättigheter förbehållna.`,
 };

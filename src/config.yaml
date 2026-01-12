@@ -11,7 +11,7 @@ metadata:
   title:
     default: PartyTent Helsingborg
     template: '%s | PartyTent Helsingborg'
-  description: "Hyr parttält, bord och stolar i Helsingborg och Skåne. Professionell uthyrning för bröllop, fester och företagsevent. Leverans i hela Skåne."
+  description: 'Hyr parttält, bord och stolar i Helsingborg och Skåne. Professionell uthyrning för bröllop, fester och företagsevent. Leverans i hela Skåne.'
   robots:
     index: true
     follow: true

@@ -50,13 +50,15 @@ export default function BookingTicker() {
           transition={{ type: 'spring', stiffness: 300, damping: 25 }}
           className="fixed bottom-6 left-6 z-40 max-w-xs"
         >
-          <div className="
+          <div
+            className="
             flex items-center gap-3
             bg-white dark:bg-slate-800
             rounded-xl shadow-lg
             border border-gray-100 dark:border-slate-700
             p-4
-          ">
+          "
+          >
             {/* Pulsing dot */}
             <div className="relative flex-shrink-0">
               <div className="w-3 h-3 bg-green-500 rounded-full" />
@@ -71,14 +73,17 @@ export default function BookingTicker() {
               <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
                 bokade just <span className="text-primary font-medium">{current.product}</span>
               </p>
-              <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
-                {current.timeAgo}
-              </p>
+              <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">{current.timeAgo}</p>
             </div>
 
             {/* Checkmark */}
             <div className="flex-shrink-0 w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
-              <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg
+                className="w-4 h-4 text-green-600 dark:text-green-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>

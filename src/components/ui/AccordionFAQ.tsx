@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface FAQItem {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
 
 interface AccordionFAQProps {
@@ -18,18 +18,15 @@ export default function AccordionFAQ({ items }: AccordionFAQProps) {
   return (
     <div className="space-y-3">
       {items.map((item, index) => (
-        <motion.div
-          key={index}
-          initial={false}
-          className="group"
-        >
+        <motion.div key={index} initial={false} className="group">
           {/* M3 Card with elevation states */}
           <div
             className={`
               overflow-hidden rounded-2xl transition-all duration-300
-              ${openIndex === index
-                ? 'bg-primary/5 dark:bg-primary/10 shadow-m3-2'
-                : 'bg-white dark:bg-slate-800/50 shadow-m3-1 hover:shadow-m3-2'
+              ${
+                openIndex === index
+                  ? 'bg-primary/5 dark:bg-primary/10 shadow-m3-2'
+                  : 'bg-white dark:bg-slate-800/50 shadow-m3-1 hover:shadow-m3-2'
               }
               border border-gray-100 dark:border-slate-700
             `}
@@ -46,13 +43,12 @@ export default function AccordionFAQ({ items }: AccordionFAQProps) {
                 rounded-2xl
               `}
             >
-              <span className={`
+              <span
+                className={`
                 font-semibold text-lg transition-colors duration-200
-                ${openIndex === index
-                  ? 'text-primary dark:text-primary'
-                  : 'text-gray-900 dark:text-gray-100'
-                }
-              `}>
+                ${openIndex === index ? 'text-primary dark:text-primary' : 'text-gray-900 dark:text-gray-100'}
+              `}
+              >
                 {item.title}
               </span>
 
@@ -63,19 +59,14 @@ export default function AccordionFAQ({ items }: AccordionFAQProps) {
                 className={`
                   flex items-center justify-center w-10 h-10 rounded-full
                   transition-colors duration-200
-                  ${openIndex === index
-                    ? 'bg-primary text-white'
-                    : 'bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300'
+                  ${
+                    openIndex === index
+                      ? 'bg-primary text-white'
+                      : 'bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300'
                   }
                 `}
               >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </motion.div>
@@ -91,16 +82,16 @@ export default function AccordionFAQ({ items }: AccordionFAQProps) {
                     opacity: 1,
                     transition: {
                       height: { duration: 0.4, ease: [0.4, 0, 0.2, 1] },
-                      opacity: { duration: 0.3, delay: 0.1 }
-                    }
+                      opacity: { duration: 0.3, delay: 0.1 },
+                    },
                   }}
                   exit={{
                     height: 0,
                     opacity: 0,
                     transition: {
                       height: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
-                      opacity: { duration: 0.2 }
-                    }
+                      opacity: { duration: 0.2 },
+                    },
                   }}
                   className="overflow-hidden"
                 >

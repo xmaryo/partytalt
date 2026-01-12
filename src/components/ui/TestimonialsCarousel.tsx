@@ -112,15 +112,11 @@ export default function TestimonialsCarousel() {
             </div>
 
             {/* Quote */}
-            <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-200 mb-6 italic">
-              "{current.text}"
-            </p>
+            <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-200 mb-6 italic">"{current.text}"</p>
 
             {/* Author */}
             <div className="flex flex-col items-center">
-              <span className="font-bold text-gray-900 dark:text-white">
-                {current.name}
-              </span>
+              <span className="font-bold text-gray-900 dark:text-white">{current.name}</span>
               <span className="text-sm text-gray-500 dark:text-gray-400">
                 {current.location} • {current.event}
               </span>
@@ -136,9 +132,7 @@ export default function TestimonialsCarousel() {
             key={index}
             onClick={() => goTo(index)}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex
-                ? 'w-8 bg-primary'
-                : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400'
+              index === currentIndex ? 'w-8 bg-primary' : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400'
             }`}
           />
         ))}

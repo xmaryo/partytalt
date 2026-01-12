@@ -7,11 +7,7 @@ interface FloatingCTAProps {
   showAfterScroll?: number;
 }
 
-export default function FloatingCTA({
-  text = 'Boka nu',
-  href = '/kontakt',
-  showAfterScroll = 500,
-}: FloatingCTAProps) {
+export default function FloatingCTA({ text = 'Boka nu', href = '/kontakt', showAfterScroll = 500 }: FloatingCTAProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isPulsing, setIsPulsing] = useState(true);
 

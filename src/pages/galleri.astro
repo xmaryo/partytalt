@@ -30,18 +30,20 @@ const images = [
   <section class="py-16 md:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {images.map((image) => (
-          <div class="group relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-slate-800">
-            <img
-              src={image.src.src}
-              alt={image.alt}
-              class="w-full h-64 object-contain p-8 transition-transform duration-300 group-hover:scale-105"
-            />
-            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-              <h3 class="text-white font-semibold text-lg">{image.title}</h3>
+        {
+          images.map((image) => (
+            <div class="group relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-slate-800">
+              <img
+                src={image.src.src}
+                alt={image.alt}
+                class="w-full h-64 object-contain p-8 transition-transform duration-300 group-hover:scale-105"
+              />
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                <h3 class="text-white font-semibold text-lg">{image.title}</h3>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
 
       <div class="mt-12 text-center">
@@ -66,9 +68,7 @@ const images = [
       },
     ]}
   >
-    <Fragment slot="title">
-      Vill du se produkterna på plats?
-    </Fragment>
+    <Fragment slot="title"> Vill du se produkterna på plats? </Fragment>
 
     <Fragment slot="subtitle">
       Kontakta oss för att boka ett besök eller få mer information om våra produkter.

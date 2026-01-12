@@ -92,7 +92,9 @@ import '@fontsource-variable/inter';
   }
 
   /* M3 Rounded corners for buttons */
-  .btn, .btn-primary, .btn-secondary {
+  .btn,
+  .btn-primary,
+  .btn-secondary {
     border-radius: 1.25rem !important;
   }
 
@@ -277,7 +279,9 @@ import '@fontsource-variable/inter';
     background-position: 50%;
     transform: scale(10, 10);
     opacity: 0;
-    transition: transform 0.5s, opacity 1s;
+    transition:
+      transform 0.5s,
+      opacity 1s;
   }
 
   .ripple:active::after {
@@ -441,12 +445,24 @@ import '@fontsource-variable/inter';
     animation: fadeInUp var(--m3-duration-medium4) var(--m3-easing-emphasized-decelerate) forwards;
   }
 
-  .stagger-children > *:nth-child(1) { animation-delay: 0ms; }
-  .stagger-children > *:nth-child(2) { animation-delay: 50ms; }
-  .stagger-children > *:nth-child(3) { animation-delay: 100ms; }
-  .stagger-children > *:nth-child(4) { animation-delay: 150ms; }
-  .stagger-children > *:nth-child(5) { animation-delay: 200ms; }
-  .stagger-children > *:nth-child(6) { animation-delay: 250ms; }
+  .stagger-children > *:nth-child(1) {
+    animation-delay: 0ms;
+  }
+  .stagger-children > *:nth-child(2) {
+    animation-delay: 50ms;
+  }
+  .stagger-children > *:nth-child(3) {
+    animation-delay: 100ms;
+  }
+  .stagger-children > *:nth-child(4) {
+    animation-delay: 150ms;
+  }
+  .stagger-children > *:nth-child(5) {
+    animation-delay: 200ms;
+  }
+  .stagger-children > *:nth-child(6) {
+    animation-delay: 250ms;
+  }
 
   /* M3 Loading skeleton */
   .skeleton-m3 {
@@ -520,9 +536,15 @@ import '@fontsource-variable/inter';
   }
 
   @keyframes gradient-rotate {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   /* Touch feedback for mobile */
@@ -567,15 +589,19 @@ import '@fontsource-variable/inter';
 
   // Use requestAnimationFrame for smooth updates
   let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        updateScrollProgress();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateScrollProgress();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
 
   // Initial update
   updateScrollProgress();

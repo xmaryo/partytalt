@@ -77,11 +77,7 @@ export default function RippleButton({
   const Component = href ? 'a' : 'button';
 
   return (
-    <Component
-      href={href}
-      onClick={handleClick}
-      className={`${baseStyles} ${variantStyles[variant]} ${className}`}
-    >
+    <Component href={href} onClick={handleClick} className={`${baseStyles} ${variantStyles[variant]} ${className}`}>
       {icon && <span className="w-5 h-5">{icon}</span>}
       {children}
 

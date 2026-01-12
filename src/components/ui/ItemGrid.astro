@@ -50,18 +50,25 @@ const {
             <div class="flex justify-center">
               {(icon || defaultIcon) && (
                 <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20 mr-4 rtl:mr-0 rtl:ml-4">
-                  <Icon
-                    name={icon || defaultIcon}
-                    class={twMerge('w-6 h-6', defaultIconClass, itemClasses?.icon)}
-                  />
+                  <Icon name={icon || defaultIcon} class={twMerge('w-6 h-6', defaultIconClass, itemClasses?.icon)} />
                 </div>
               )}
             </div>
             <div class="mt-0.5 flex-1">
-              {title && <h3 class={twMerge('text-lg font-semibold text-gray-900 dark:text-white', titleClass, itemClasses?.title)}>{title}</h3>}
+              {title && (
+                <h3
+                  class={twMerge('text-lg font-semibold text-gray-900 dark:text-white', titleClass, itemClasses?.title)}
+                >
+                  {title}
+                </h3>
+              )}
               {description && (
                 <p
-                  class={twMerge(`${title ? 'mt-2' : ''} text-muted text-sm leading-relaxed`, descriptionClass, itemClasses?.description)}
+                  class={twMerge(
+                    `${title ? 'mt-2' : ''} text-muted text-sm leading-relaxed`,
+                    descriptionClass,
+                    itemClasses?.description
+                  )}
                   set:html={description}
                 />
               )}

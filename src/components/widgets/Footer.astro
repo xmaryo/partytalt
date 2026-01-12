@@ -1,6 +1,5 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { SITE } from 'astrowind:config';
 import { getHomePermalink } from '~/utils/permalinks';
 import Logo from '~/components/Logo.astro';
 
@@ -87,10 +86,10 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
         <Fragment set:html={footNote} />
       </div>
 
-      {secondaryLinks?.length > 0 && (
-        <div class="text-sm text-muted flex gap-1 mt-2">
-          {
-            secondaryLinks.map(({ text, href }, index) => (
+      {
+        secondaryLinks?.length > 0 && (
+          <div class="text-sm text-muted flex gap-1 mt-2">
+            {secondaryLinks.map(({ text, href }, index) => (
               <>
                 {index !== 0 ? ' · ' : ''}
                 <a
@@ -99,10 +98,10 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
                   set:html={text}
                 />
               </>
-            ))
-          }
-        </div>
-      )}
+            ))}
+          </div>
+        )
+      }
     </div>
   </div>
 </footer>

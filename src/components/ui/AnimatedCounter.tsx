@@ -46,7 +46,8 @@ export default function AnimatedCounter({ value, label }: AnimatedCounterProps) 
         animate={isInView ? { y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        {displayValue}{suffix}
+        {displayValue}
+        {suffix}
       </motion.div>
       <motion.div
         className="text-white/80 text-sm"

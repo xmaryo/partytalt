@@ -20,9 +20,9 @@ const stepVariants = {
     transition: {
       delay: i * 0.2,
       duration: 0.5,
-      ease: [0.4, 0, 0.2, 1] as [number, number, number, number]
-    }
-  })
+      ease: [0.4, 0, 0.2, 1] as [number, number, number, number],
+    },
+  }),
 };
 
 const lineVariants = {
@@ -32,9 +32,9 @@ const lineVariants = {
     transition: {
       delay: i * 0.2 + 0.3,
       duration: 0.4,
-      ease: [0.4, 0, 0.2, 1] as [number, number, number, number]
-    }
-  })
+      ease: [0.4, 0, 0.2, 1] as [number, number, number, number],
+    },
+  }),
 };
 
 const iconVariants = {
@@ -47,9 +47,9 @@ const iconVariants = {
       duration: 0.5,
       type: 'spring' as const,
       stiffness: 200,
-      damping: 15
-    }
-  })
+      damping: 15,
+    },
+  }),
 };
 
 export default function AnimatedSteps({ items }: AnimatedStepsProps) {
@@ -72,41 +72,26 @@ export default function AnimatedSteps({ items }: AnimatedStepsProps) {
               variants={iconVariants}
               className={`
                 flex items-center justify-center w-12 h-12 rounded-full z-10
-                ${index === items.length - 1
-                  ? 'bg-green-500 text-white'
-                  : 'bg-primary text-white'
-                }
+                ${index === items.length - 1 ? 'bg-green-500 text-white' : 'bg-primary text-white'}
                 shadow-m3-2
               `}
             >
-              <span className="text-lg font-bold">
-                {index === items.length - 1 ? '✓' : index + 1}
-              </span>
+              <span className="text-lg font-bold">{index === items.length - 1 ? '✓' : index + 1}</span>
             </motion.div>
 
             {/* Connecting line */}
             {index < items.length - 1 && (
-              <motion.div
-                custom={index}
-                variants={lineVariants}
-                className="w-0.5 h-24 bg-primary/30 origin-top"
-              />
+              <motion.div custom={index} variants={lineVariants} className="w-0.5 h-24 bg-primary/30 origin-top" />
             )}
           </div>
 
           {/* Content */}
-          <motion.div
-            custom={index}
-            variants={stepVariants}
-            className="flex-1 pb-12"
-          >
+          <motion.div custom={index} variants={stepVariants} className="flex-1 pb-12">
             <motion.h3
               className="text-xl font-semibold text-gray-900 dark:text-white mb-2"
               dangerouslySetInnerHTML={{ __html: item.title }}
             />
-            <motion.p className="text-muted leading-relaxed">
-              {item.description}
-            </motion.p>
+            <motion.p className="text-muted leading-relaxed">{item.description}</motion.p>
           </motion.div>
         </motion.div>
       ))}

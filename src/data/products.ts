@@ -50,7 +50,8 @@ export const categories: ProductCategory[] = [
     icon: 'mdi:warehouse',
     mainImage: partytaltLargeImg,
     iconImage: taltIcon,
-    fullDescription: 'Oavsett om det är student, födelsedag, bröllop eller sommarfest har vi rätt tält för dig. Våra partytält är eleganta, vädertåliga och rymmer allt från 20 till 100 gäster.',
+    fullDescription:
+      'Oavsett om det är student, födelsedag, bröllop eller sommarfest har vi rätt tält för dig. Våra partytält är eleganta, vädertåliga och rymmer allt från 20 till 100 gäster.',
     features: ['Vattentät PVC-duk', 'Galvaniserad stålram', 'Eleganta fönster', 'Modulär design'],
     variants: [
       {
@@ -59,10 +60,10 @@ export const categories: ProductCategory[] = [
         image: partytaltSmallImg,
         price: 'från 1 500 kr/dag',
         specs: {
-          'Storlek': '4 x 6 meter',
-          'Kapacitet': '20-30 gäster',
-          'Material': 'PVC-duk, galvaniserad stålram',
-          'Fönster': 'Georgisk stil',
+          Storlek: '4 x 6 meter',
+          Kapacitet: '20-30 gäster',
+          Material: 'PVC-duk, galvaniserad stålram',
+          Fönster: 'Georgisk stil',
         },
       },
       {
@@ -71,10 +72,10 @@ export const categories: ProductCategory[] = [
         image: partytaltVariant1Img,
         price: 'från 2 500 kr/dag',
         specs: {
-          'Storlek': '4 x 8 meter',
-          'Kapacitet': '30-50 gäster',
-          'Material': 'PVC-duk, galvaniserad stålram',
-          'Fönster': 'Georgisk stil',
+          Storlek: '4 x 8 meter',
+          Kapacitet: '30-50 gäster',
+          Material: 'PVC-duk, galvaniserad stålram',
+          Fönster: 'Georgisk stil',
         },
       },
       {
@@ -83,22 +84,23 @@ export const categories: ProductCategory[] = [
         image: partytaltLargeImg,
         price: 'från 4 500 kr/dag',
         specs: {
-          'Storlek': '6 x 12 meter',
-          'Kapacitet': '60-100 gäster',
-          'Material': 'PVC-duk, galvaniserad stålram',
-          'Fönster': 'Georgisk stil',
+          Storlek: '6 x 12 meter',
+          Kapacitet: '60-100 gäster',
+          Material: 'PVC-duk, galvaniserad stålram',
+          Fönster: 'Georgisk stil',
         },
       },
       {
         name: 'Flextält (Popup)',
-        description: 'Praktiska popup-tält som är perfekta för marknader, utställningar och mindre evenemang. Snabb montering på bara några minuter.',
+        description:
+          'Praktiska popup-tält som är perfekta för marknader, utställningar och mindre evenemang. Snabb montering på bara några minuter.',
         image: flextaltImg,
         price: 'från 500 kr/dag',
         specs: {
-          'Storlekar': '3x3m, 3x4.5m, 3x6m',
-          'Montering': '60 sekunder',
-          'Material': 'Robust duk, aluminiumram',
-          'Användning': 'Marknader, utställningar',
+          Storlekar: '3x3m, 3x4.5m, 3x6m',
+          Montering: '60 sekunder',
+          Material: 'Robust duk, aluminiumram',
+          Användning: 'Marknader, utställningar',
         },
       },
     ],
@@ -110,7 +112,8 @@ export const categories: ProductCategory[] = [
     icon: 'mdi:table-furniture',
     mainImage: bordRektangulartImg,
     iconImage: bordIcon,
-    fullDescription: 'Stabila fällbord i flera storlekar – perfekta för middagar, bufféer och mingel. Lätta att ställa upp och ta ner, med bordsskiva i högdensitetspolyeten och kraftig stålram.',
+    fullDescription:
+      'Stabila fällbord i flera storlekar – perfekta för middagar, bufféer och mingel. Lätta att ställa upp och ta ner, med bordsskiva i högdensitetspolyeten och kraftig stålram.',
     features: ['Lätta att fälla', 'HDPE bordsskiva', 'Stålram', 'Flera storlekar'],
     variants: [
       {
@@ -119,11 +122,11 @@ export const categories: ProductCategory[] = [
         image: bordRektangulartImg,
         price: '75 kr/dag',
         specs: {
-          'Längd': '180 cm',
-          'Bredd': '76 cm',
-          'Höjd': '74 cm',
-          'Material': 'HDPE bordsskiva, pulverlackerad stålram',
-          'Kapacitet': '6-8 personer',
+          Längd: '180 cm',
+          Bredd: '76 cm',
+          Höjd: '74 cm',
+          Material: 'HDPE bordsskiva, pulverlackerad stålram',
+          Kapacitet: '6-8 personer',
         },
       },
       {
@@ -132,11 +135,11 @@ export const categories: ProductCategory[] = [
         image: bordRektangulartImg,
         price: '100 kr/dag',
         specs: {
-          'Längd': '240 cm',
-          'Bredd': '76 cm',
-          'Höjd': '74 cm',
-          'Material': 'HDPE bordsskiva, pulverlackerad stålram',
-          'Kapacitet': '8-10 personer',
+          Längd: '240 cm',
+          Bredd: '76 cm',
+          Höjd: '74 cm',
+          Material: 'HDPE bordsskiva, pulverlackerad stålram',
+          Kapacitet: '8-10 personer',
         },
       },
       {
@@ -145,10 +148,10 @@ export const categories: ProductCategory[] = [
         image: bordRuntImg,
         price: '125 kr/dag',
         specs: {
-          'Diameter': '152 cm',
-          'Höjd': '74 cm',
-          'Material': 'HDPE bordsskiva, pulverlackerad stålram',
-          'Kapacitet': '8-10 personer',
+          Diameter: '152 cm',
+          Höjd: '74 cm',
+          Material: 'HDPE bordsskiva, pulverlackerad stålram',
+          Kapacitet: '8-10 personer',
         },
       },
       {
@@ -157,10 +160,10 @@ export const categories: ProductCategory[] = [
         image: cocktailbordImg,
         price: '100 kr/dag',
         specs: {
-          'Diameter': '80 cm',
-          'Höjd': '110 cm',
-          'Material': 'HDPE bordsskiva, stålram',
-          'Användning': 'Mingel, cocktailpartyn',
+          Diameter: '80 cm',
+          Höjd: '110 cm',
+          Material: 'HDPE bordsskiva, stålram',
+          Användning: 'Mingel, cocktailpartyn',
         },
       },
     ],
@@ -172,7 +175,8 @@ export const categories: ProductCategory[] = [
     icon: 'mdi:chair-rolling',
     mainImage: stolSvartImg,
     iconImage: stolarIcon,
-    fullDescription: 'Eleganta fällstolar som passar perfekt för bröllop, fester och andra event. Bekväma, lätta att hantera och stapelbara för enkel transport.',
+    fullDescription:
+      'Eleganta fällstolar som passar perfekt för bröllop, fester och andra event. Bekväma, lätta att hantera och stapelbara för enkel transport.',
     features: ['Stapelbara', 'Pulverlackerad stålram', 'Lätta', 'Bekväma'],
     variants: [
       {
@@ -181,10 +185,10 @@ export const categories: ProductCategory[] = [
         image: stolSvartImg,
         price: '25 kr/dag',
         specs: {
-          'Mått': '48 x 43 x 89 cm (B x D x H)',
-          'Vikt': '3 kg',
-          'Material': 'Pulverlackerad stålram',
-          'Sitshöjd': '45 cm',
+          Mått: '48 x 43 x 89 cm (B x D x H)',
+          Vikt: '3 kg',
+          Material: 'Pulverlackerad stålram',
+          Sitshöjd: '45 cm',
         },
       },
       {
@@ -193,10 +197,10 @@ export const categories: ProductCategory[] = [
         image: stolGraImg,
         price: '35 kr/dag',
         specs: {
-          'Mått': '48 x 43 x 89 cm (B x D x H)',
-          'Vikt': '3.5 kg',
-          'Material': 'Pulverlackerad stålram, stoppning',
-          'Sitshöjd': '45 cm',
+          Mått: '48 x 43 x 89 cm (B x D x H)',
+          Vikt: '3.5 kg',
+          Material: 'Pulverlackerad stålram, stoppning',
+          Sitshöjd: '45 cm',
         },
       },
       {
@@ -205,10 +209,10 @@ export const categories: ProductCategory[] = [
         image: stoloverdragImg,
         price: '20 kr/dag',
         specs: {
-          'Material': 'Polyester/elastan',
-          'Färg': 'Vit med rosett',
-          'Användning': 'Bröllop, fester',
-          'Tvättbar': 'Ja',
+          Material: 'Polyester/elastan',
+          Färg: 'Vit med rosett',
+          Användning: 'Bröllop, fester',
+          Tvättbar: 'Ja',
         },
       },
     ],
@@ -220,7 +224,8 @@ export const categories: ProductCategory[] = [
     icon: 'mdi:lightbulb-outline',
     mainImage: festbelysningImg,
     iconImage: kylskapIcon,
-    fullDescription: 'Komplettera din fest med belysning, kyl, golv och sittsäckar. Vi har allt du behöver för att skapa den perfekta stämningen på ditt event.',
+    fullDescription:
+      'Komplettera din fest med belysning, kyl, golv och sittsäckar. Vi har allt du behöver för att skapa den perfekta stämningen på ditt event.',
     features: ['Festbelysning', 'Kylskåp', 'Eventgolv', 'Sittsäckar'],
     variants: [
       {
@@ -229,10 +234,10 @@ export const categories: ProductCategory[] = [
         image: festbelysningImg,
         price: '150 kr/dag',
         specs: {
-          'Typ': 'Ljusslinga med E27-sockel',
-          'Längd': 'Flera längder tillgängliga',
-          'Lamptyp': 'LED-lampor (ingår ej)',
-          'Användning': 'Tält, utomhus, trädgård',
+          Typ: 'Ljusslinga med E27-sockel',
+          Längd: 'Flera längder tillgängliga',
+          Lamptyp: 'LED-lampor (ingår ej)',
+          Användning: 'Tält, utomhus, trädgård',
         },
       },
       {
@@ -241,10 +246,10 @@ export const categories: ProductCategory[] = [
         image: kylskapImg,
         price: '300 kr/dag',
         specs: {
-          'Typ': 'Displaykyl med glasdörr',
-          'Volym': 'Ca 350 liter',
-          'Temperatur': '+2°C till +10°C',
-          'El': '230V',
+          Typ: 'Displaykyl med glasdörr',
+          Volym: 'Ca 350 liter',
+          Temperatur: '+2°C till +10°C',
+          El: '230V',
         },
       },
       {
@@ -254,9 +259,9 @@ export const categories: ProductCategory[] = [
         price: '15 kr/m²/dag',
         specs: {
           'Storlek per platta': '40 x 40 cm',
-          'Material': 'Slitstark plast',
-          'Användning': 'Tält, gräsmatta, ojämnt underlag',
-          'Koppling': 'Klicksystem',
+          Material: 'Slitstark plast',
+          Användning: 'Tält, gräsmatta, ojämnt underlag',
+          Koppling: 'Klicksystem',
         },
       },
       {
@@ -265,10 +270,10 @@ export const categories: ProductCategory[] = [
         image: sittsackarImg,
         price: '75 kr/dag',
         specs: {
-          'Färger': 'Svart, röd, flera',
-          'Material': 'Slitstark textil',
-          'Fyllning': 'EPS-kulor',
-          'Användning': 'Lounge, chill-out',
+          Färger: 'Svart, röd, flera',
+          Material: 'Slitstark textil',
+          Fyllning: 'EPS-kulor',
+          Användning: 'Lounge, chill-out',
         },
       },
     ],

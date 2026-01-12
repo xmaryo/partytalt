@@ -27,12 +27,7 @@ const CLOSE_BOTTOM = 'M 19 5 L 5 19';
 const ANIMATION_DURATION = 0.35;
 const ANIMATION_EASING: [number, number, number, number] = [0.4, 0.0, 0.2, 1];
 
-export default function HamburgerButton({
-  isOpen,
-  onToggle,
-  size = 24,
-  className = '',
-}: HamburgerButtonProps) {
+export default function HamburgerButton({ isOpen, onToggle, size = 24, className = '' }: HamburgerButtonProps) {
   const pathVariants = {
     transition: {
       duration: ANIMATION_DURATION,

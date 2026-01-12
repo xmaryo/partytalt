@@ -34,7 +34,7 @@ export default function PriceEstimator() {
       const current = prev[productId] || 0;
       const newValue = Math.max(0, current + delta);
       if (newValue === 0) {
-        const { [productId]: _, ...rest } = prev;
+        const { [productId]: _removed, ...rest } = prev;
         return rest;
       }
       return { ...prev, [productId]: newValue };
@@ -54,22 +54,20 @@ export default function PriceEstimator() {
 
   return (
     <div className="w-full max-w-2xl mx-auto">
-      <div className="
+      <div
+        className="
         bg-white dark:bg-slate-800
         rounded-2xl shadow-xl
         border border-gray-100 dark:border-slate-700
         overflow-hidden
-      ">
+      "
+      >
         {/* Header */}
         <div className="p-6 border-b border-gray-100 dark:border-slate-700">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                Beräkna pris
-              </h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                Välj produkter för en prisuppskattning
-              </p>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white">Beräkna pris</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Välj produkter för en prisuppskattning</p>
             </div>
             <button
               onClick={() => setIsExpanded(!isExpanded)}
@@ -101,9 +99,7 @@ export default function PriceEstimator() {
                         className="flex items-center justify-between p-3 bg-gray-50 dark:bg-slate-700/50 rounded-xl"
                       >
                         <div className="flex-1">
-                          <p className="font-medium text-gray-900 dark:text-white">
-                            {product.name}
-                          </p>
+                          <p className="font-medium text-gray-900 dark:text-white">{product.name}</p>
                           <p className="text-sm text-primary font-semibold">
                             {product.price} kr/{product.unit}/dag
                           </p>
@@ -152,7 +148,9 @@ export default function PriceEstimator() {
                     if (!product) return null;
                     return (
                       <div key={productId} className="flex justify-between text-sm text-gray-600 dark:text-gray-400">
-                        <span>{quantity}x {product.name}</span>
+                        <span>
+                          {quantity}x {product.name}
+                        </span>
                         <span>{product.price * quantity} kr</span>
                       </div>
                     );
@@ -161,9 +159,7 @@ export default function PriceEstimator() {
 
                 {/* Total price */}
                 <div className="flex items-center justify-between mb-4 pt-4 border-t border-gray-100 dark:border-slate-700">
-                  <span className="text-lg font-bold text-gray-900 dark:text-white">
-                    Uppskattat pris
-                  </span>
+                  <span className="text-lg font-bold text-gray-900 dark:text-white">Uppskattat pris</span>
                   <motion.span
                     key={total}
                     initial={{ scale: 1.2, color: '#3b82f6' }}
