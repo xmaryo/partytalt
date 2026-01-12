@@ -1,6 +1,6 @@
 site:
   name: PartyTent Helsingborg
-  site: 'https://partytent.se'
+  site: 'https://partytalt.se'
   base: '/'
   trailingSlash: false
 
@@ -23,8 +23,8 @@ metadata:
         height: 628
     type: website
   twitter:
-    handle: '@partytent'
-    site: '@partytent'
+    handle: '@partytalt'
+    site: '@partytalt'
     cardType: summary_large_image
 
 i18n:
