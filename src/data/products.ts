@@ -230,7 +230,7 @@ export const categories: ProductCategory[] = [
     features: ['Ljusslinga', 'Kylskåp', 'Eventgolv'],
     variants: [
       {
-        name: 'Ljusslinga',
+        name: 'Ljusslinga kort',
         description: 'Kort ljusslinga med stämningsfulla lampfattningar. Skapar en magisk atmosfär i tältet.',
         image: festbelysningImg,
         price: '350 kr/dag',
@@ -242,7 +242,7 @@ export const categories: ProductCategory[] = [
         },
       },
       {
-        name: 'Ljusslinga',
+        name: 'Ljusslinga medium',
         description: 'Medium ljusslinga med stämningsfulla lampfattningar. Skapar en magisk atmosfär i tältet.',
         image: festbelysningImg,
         price: '400 kr/dag',
@@ -254,7 +254,7 @@ export const categories: ProductCategory[] = [
         },
       },
       {
-        name: 'Ljusslinga',
+        name: 'Ljusslinga lång',
         description: 'Lång ljusslinga med stämningsfulla lampfattningar. Skapar en magisk atmosfär i tältet.',
         image: festbelysningImg,
         price: '450 kr/dag',
