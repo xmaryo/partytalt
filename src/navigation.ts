@@ -47,7 +47,6 @@ export const footerData = {
   ],
   socialLinks: [
     { ariaLabel: 'Facebook', icon: 'mdi:facebook', href: 'https://www.facebook.com/share/1ASDkHWBNC/' },
-    { ariaLabel: 'Instagram', icon: 'mdi:instagram', href: '#' },
   ],
   footNote: `© ${new Date().getFullYear()} Partytält Helsingborg. Alla rättigheter förbehållna.`,
 };

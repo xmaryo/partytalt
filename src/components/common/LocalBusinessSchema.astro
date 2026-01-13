@@ -1,0 +1,28 @@
+---
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'PartyTältHbg',
+  description: 'Uthyrning av partytält, bord och stolar för event i Helsingborg och Skåne',
+  url: 'https://partytalt.vercel.app',
+  email: 'info@partytalthbg.se',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Helsingborg',
+    addressRegion: 'Skåne',
+    addressCountry: 'SE',
+  },
+  areaServed: {
+    '@type': 'GeoCircle',
+    geoMidpoint: {
+      '@type': 'GeoCoordinates',
+      latitude: 56.0465,
+      longitude: 12.6945,
+    },
+    geoRadius: '100000',
+  },
+  priceRange: '$$',
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
