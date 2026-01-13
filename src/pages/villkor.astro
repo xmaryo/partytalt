@@ -32,9 +32,7 @@ const metadata = {
         <div class="px-8 py-10 md:px-12">
           <!-- Intro Section with Fillable Fields -->
           <div class="mb-10 p-6 bg-gray-50 dark:bg-slate-700/50 rounded-xl border-l-4 border-primary">
-            <p class="text-gray-700 dark:text-slate-300 leading-relaxed">
-              Dessa villkor gäller mellan
-            </p>
+            <p class="text-gray-700 dark:text-slate-300 leading-relaxed">Dessa villkor gäller mellan</p>
             <div class="grid grid-cols-2 gap-4 my-4">
               <div>
                 <label class="text-xs text-gray-500 dark:text-slate-400 block mb-1">Uthyrarens företagsnamn</label>
@@ -369,12 +367,20 @@ const metadata = {
 
           <!-- Signature Section -->
           <div class="border-t-2 border-gray-200 dark:border-slate-600 pt-8 mt-10 print:pt-4 print:mt-6">
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6 text-center print:text-lg print:mb-4">Underskrifter</h3>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6 text-center print:text-lg print:mb-4">
+              Underskrifter
+            </h3>
 
             <div class="grid grid-cols-2 gap-4 md:gap-8 print:gap-4">
               <!-- Hyrestagare Section -->
-              <div class="p-3 md:p-5 bg-gray-50 dark:bg-slate-700/30 rounded-xl border border-gray-200 dark:border-slate-600 print:p-3">
-                <h4 class="font-bold text-gray-900 dark:text-white mb-3 md:mb-4 text-center text-sm md:text-base print:text-sm print:mb-2">Hyrestagare</h4>
+              <div
+                class="p-3 md:p-5 bg-gray-50 dark:bg-slate-700/30 rounded-xl border border-gray-200 dark:border-slate-600 print:p-3"
+              >
+                <h4
+                  class="font-bold text-gray-900 dark:text-white mb-3 md:mb-4 text-center text-sm md:text-base print:text-sm print:mb-2"
+                >
+                  Hyrestagare
+                </h4>
                 <div class="space-y-3 print:space-y-2">
                   <div>
                     <label class="text-xs text-gray-500 dark:text-slate-400 block mb-1">Datum</label>
@@ -385,7 +391,10 @@ const metadata = {
                   </div>
                   <div>
                     <label class="text-xs text-gray-500 dark:text-slate-400 block mb-1">Underskrift</label>
-                    <div class="border-b-2 border-gray-300 dark:border-slate-500 h-10 print:h-8 bg-white dark:bg-slate-800 rounded print:rounded-none print:bg-transparent"></div>
+                    <div
+                      class="border-b-2 border-gray-300 dark:border-slate-500 h-10 print:h-8 bg-white dark:bg-slate-800 rounded print:rounded-none print:bg-transparent"
+                    >
+                    </div>
                   </div>
                   <div>
                     <label class="text-xs text-gray-500 dark:text-slate-400 block mb-1">Namnförtydligande</label>
@@ -400,7 +409,11 @@ const metadata = {
 
               <!-- Uthyraren Section -->
               <div class="p-3 md:p-5 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/20 print:p-3">
-                <h4 class="font-bold text-gray-900 dark:text-white mb-3 md:mb-4 text-center text-sm md:text-base print:text-sm print:mb-2">Uthyraren</h4>
+                <h4
+                  class="font-bold text-gray-900 dark:text-white mb-3 md:mb-4 text-center text-sm md:text-base print:text-sm print:mb-2"
+                >
+                  Uthyraren
+                </h4>
                 <div class="space-y-3 print:space-y-2">
                   <div>
                     <label class="text-xs text-gray-500 dark:text-slate-400 block mb-1">Datum</label>
@@ -411,7 +424,10 @@ const metadata = {
                   </div>
                   <div>
                     <label class="text-xs text-gray-500 dark:text-slate-400 block mb-1">Underskrift</label>
-                    <div class="border-b-2 border-gray-300 dark:border-slate-500 h-10 print:h-8 bg-white dark:bg-slate-800 rounded print:rounded-none print:bg-transparent"></div>
+                    <div
+                      class="border-b-2 border-gray-300 dark:border-slate-500 h-10 print:h-8 bg-white dark:bg-slate-800 rounded print:rounded-none print:bg-transparent"
+                    >
+                    </div>
                   </div>
                   <div>
                     <label class="text-xs text-gray-500 dark:text-slate-400 block mb-1">Namnförtydligande</label>
@@ -547,26 +563,31 @@ const metadata = {
   // Share functionality
   function shareDocument() {
     if (navigator.share) {
-      navigator.share({
-        title: 'Hyresvillkor - partytältHbg',
-        text: 'Hyresvillkor för tält och utrustning',
-        url: window.location.href
-      }).catch(() => {
-        copyToClipboard();
-      });
+      navigator
+        .share({
+          title: 'Hyresvillkor - partytältHbg',
+          text: 'Hyresvillkor för tält och utrustning',
+          url: window.location.href,
+        })
+        .catch(() => {
+          copyToClipboard();
+        });
     } else {
       copyToClipboard();
     }
   }
 
   function copyToClipboard() {
-    navigator.clipboard.writeText(window.location.href).then(() => {
-      alert('Länk kopierad till urklipp!');
-    }).catch(() => {
-      prompt('Kopiera länken:', window.location.href);
-    });
+    navigator.clipboard
+      .writeText(window.location.href)
+      .then(() => {
+        alert('Länk kopierad till urklipp!');
+      })
+      .catch(() => {
+        prompt('Kopiera länken:', window.location.href);
+      });
   }
 
   // Make shareDocument available globally
-  window.shareDocument = shareDocument;
+  (window as unknown as { shareDocument: typeof shareDocument }).shareDocument = shareDocument;
 </script>
