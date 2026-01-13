@@ -30,7 +30,6 @@ export const footerData = {
       links: [
         { text: 'Produkter', href: '/#produkter' },
         { text: 'Vanliga frågor', href: getPermalink('/vanliga-fragor') },
-        { text: 'Galleri', href: getPermalink('/galleri') },
       ],
     },
     {
