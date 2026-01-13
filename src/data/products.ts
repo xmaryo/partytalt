@@ -80,7 +80,8 @@ export const categories: ProductCategory[] = [
       },
       {
         name: 'Partytält 4x8m',
-        description: 'Klassiskt tält med vattentät PVC-duk och galvaniserad stålram. Avtagbara väggar för flexibel konfiguration. Georgiska fönster ger fint ljusinsläpp.',
+        description:
+          'Klassiskt tält med vattentät PVC-duk och galvaniserad stålram. Avtagbara väggar för flexibel konfiguration. Georgiska fönster ger fint ljusinsläpp.',
         image: partytalt4x8Img,
         price: 'från 4 250 kr/dag',
         specs: {
@@ -92,7 +93,8 @@ export const categories: ProductCategory[] = [
       },
       {
         name: 'Partytält 6x6m',
-        description: 'Elegant tält med vattentät PVC-duk och galvaniserad stålram. Georgiska fönster ger fint ljusinsläpp. Perfekt för medelstora fester och bröllop.',
+        description:
+          'Elegant tält med vattentät PVC-duk och galvaniserad stålram. Georgiska fönster ger fint ljusinsläpp. Perfekt för medelstora fester och bröllop.',
         image: partytalt6x6Img,
         price: 'från 4 000 kr/dag',
         specs: {
@@ -104,7 +106,8 @@ export const categories: ProductCategory[] = [
       },
       {
         name: 'Partytält 5x10m',
-        description: 'Rymligt tält med vattentät PVC-duk och robust stålram. Stora georgiska fönster ger härligt ljusinsläpp. Perfekt för större fester och bröllop.',
+        description:
+          'Rymligt tält med vattentät PVC-duk och robust stålram. Stora georgiska fönster ger härligt ljusinsläpp. Perfekt för större fester och bröllop.',
         image: partytalt5x10Img,
         price: 'från 5 750 kr/dag',
         specs: {

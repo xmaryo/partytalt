@@ -52,5 +52,5 @@ Vår webbplats kan använda cookies för att förbättra din upplevelse. Du kan 
 
 Om du har frågor om denna integritetspolicy eller vill utöva dina rättigheter, kontakta oss:
 
-- E-post: info@partytalt.se
-- Telefon: 070-123 45 67
+- E-post: info@partytalthbg.se
+- Telefon: 072-004 52 21

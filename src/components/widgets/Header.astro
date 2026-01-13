@@ -84,7 +84,9 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         {showToggleTheme && <ToggleTheme iconClass="w-5 h-5" />}
         <MobileMenuWrapper
           client:load
-          links={links.filter((l) => !l.links).map((l) => ({ text: l.text || '', href: l.href || '', target: l.target }))}
+          links={links
+            .filter((l) => !l.links)
+            .map((l) => ({ text: l.text || '', href: l.href || '', target: l.target }))}
         />
       </div>
     </div>
@@ -169,7 +171,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                     { 'aw-link-active': href === currentPath },
                   ]}
                   href={href}
-                  {...target ? { target, rel: 'noopener noreferrer' } : {}}
+                  {...(target ? { target, rel: 'noopener noreferrer' } : {})}
                 >
                   {text}
                 </a>

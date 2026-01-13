@@ -1,6 +1,6 @@
 site:
   name: PartyTent Helsingborg
-  site: 'https://partytalt.se'
+  site: 'https://partytalthbg.se'
   base: '/'
   trailingSlash: false
 
