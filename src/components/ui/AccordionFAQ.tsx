@@ -101,9 +101,8 @@ export default function AccordionFAQ({ items }: AccordionFAQProps) {
                     exit={{ y: -10 }}
                     transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                     className="px-6 pb-5 text-gray-600 dark:text-gray-300 leading-relaxed"
-                  >
-                    {item.description}
-                  </motion.div>
+                    dangerouslySetInnerHTML={{ __html: item.description || '' }}
+                  ></motion.div>
                 </motion.div>
               )}
             </AnimatePresence>
