@@ -13,6 +13,7 @@ import HamburgerButton from './HamburgerButton';
 interface NavLink {
   text: string;
   href: string;
+  target?: string;
 }
 
 interface MobileMenuProps {
@@ -91,7 +92,9 @@ function MobileMenuPortal({ isOpen, onToggle, links }: MobileMenuProps) {
                 <motion.a
                   key={link.href}
                   href={link.href}
-                  onClick={onToggle}
+                  onClick={link.target ? undefined : onToggle}
+                  target={link.target}
+                  rel={link.target ? 'noopener noreferrer' : undefined}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 + 0.1 }}
@@ -126,7 +129,7 @@ function MobileMenuPortal({ isOpen, onToggle, links }: MobileMenuProps) {
 
             {/* Footer */}
             <div className="p-5 text-center text-sm text-gray-400 dark:text-gray-500">
-              <span>© 2026 Party Tält Helsingborg</span>
+              <span>© 2026 partytältHbg</span>
             </div>
           </motion.div>
         </>

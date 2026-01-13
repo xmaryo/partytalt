@@ -16,11 +16,13 @@ interface Link {
   icon?: string;
   description?: string;
   image?: string;
+  target?: string;
 }
 
 interface MenuLink extends Link {
   links?: Array<MenuLink>;
   isMegaMenu?: boolean;
+  target?: string;
 }
 
 export interface Props {
@@ -82,7 +84,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         {showToggleTheme && <ToggleTheme iconClass="w-5 h-5" />}
         <MobileMenuWrapper
           client:load
-          links={links.filter((l) => !l.links).map((l) => ({ text: l.text || '', href: l.href || '' }))}
+          links={links.filter((l) => !l.links).map((l) => ({ text: l.text || '', href: l.href || '', target: l.target }))}
         />
       </div>
     </div>
@@ -94,7 +96,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         class="flex flex-col md:flex-row md:self-center md:items-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center h-full"
       >
         {
-          links.map(({ text, href, links, isMegaMenu }) => (
+          links.map(({ text, href, links, isMegaMenu, target }) => (
             <li class={links?.length ? (isMegaMenu ? 'dropdown mega-menu-container' : 'dropdown') : ''}>
               {links?.length ? (
                 <>
@@ -167,6 +169,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                     { 'aw-link-active': href === currentPath },
                   ]}
                   href={href}
+                  {...target ? { target, rel: 'noopener noreferrer' } : {}}
                 >
                   {text}
                 </a>

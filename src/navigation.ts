@@ -11,6 +11,11 @@ export const headerData = {
       href: getPermalink('/vanliga-fragor'),
     },
     {
+      text: 'Avtal/Villkor',
+      href: getPermalink('/villkor'),
+      target: '_blank',
+    },
+    {
       text: 'Kontakt',
       href: getPermalink('/kontakt'),
     },

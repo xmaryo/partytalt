@@ -11,6 +11,7 @@ import MobileMenu from './MobileMenu';
 interface NavLink {
   text: string;
   href: string;
+  target?: string;
 }
 
 interface MobileMenuWrapperProps {
