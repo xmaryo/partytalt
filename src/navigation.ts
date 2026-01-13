@@ -45,8 +45,6 @@ export const footerData = {
     { text: 'Villkor', href: getPermalink('/villkor') },
     { text: 'Integritetspolicy', href: getPermalink('/integritetspolicy') },
   ],
-  socialLinks: [
-    { ariaLabel: 'Facebook', icon: 'mdi:facebook', href: 'https://www.facebook.com/share/1ASDkHWBNC/' },
-  ],
+  socialLinks: [{ ariaLabel: 'Facebook', icon: 'mdi:facebook', href: 'https://www.facebook.com/share/1ASDkHWBNC/' }],
   footNote: `© ${new Date().getFullYear()} Partytält Helsingborg. Alla rättigheter förbehållna.`,
 };
