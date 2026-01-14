@@ -17,6 +17,7 @@ import cocktailbordImg from '~/assets/images/products/cocktailbord.webp';
 import stolSvartImg from '~/assets/images/products/stol-svart.webp';
 import stolGraImg from '~/assets/images/products/stol-gra.webp';
 import festbelysningImg from '~/assets/images/products/festbelysning.webp';
+import ljusslingaImg from '~/assets/images/products/ljusslinga-new.jpg';
 import kylskapImg from '~/assets/images/products/kylskap.webp';
 import eventgolvImg from '~/assets/images/products/eventgolv.webp';
 
@@ -243,7 +244,7 @@ export const categories: ProductCategory[] = [
       {
         name: 'Ljusslinga kort',
         description: 'Kort ljusslinga med stämningsfulla lampfattningar. Skapar en magisk atmosfär i tältet.',
-        image: festbelysningImg,
+        image: ljusslingaImg,
         price: '350 kr/dag',
         specs: {
           Typ: 'Ljusslinga med E27-sockel',
@@ -255,7 +256,7 @@ export const categories: ProductCategory[] = [
       {
         name: 'Ljusslinga medium',
         description: 'Medium ljusslinga med stämningsfulla lampfattningar. Skapar en magisk atmosfär i tältet.',
-        image: festbelysningImg,
+        image: ljusslingaImg,
         price: '400 kr/dag',
         specs: {
           Typ: 'Ljusslinga med E27-sockel',
@@ -267,7 +268,7 @@ export const categories: ProductCategory[] = [
       {
         name: 'Ljusslinga lång',
         description: 'Lång ljusslinga med stämningsfulla lampfattningar. Skapar en magisk atmosfär i tältet.',
-        image: festbelysningImg,
+        image: ljusslingaImg,
         price: '450 kr/dag',
         specs: {
           Typ: 'Ljusslinga med E27-sockel',
