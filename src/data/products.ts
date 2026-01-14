@@ -7,6 +7,8 @@ import partytaltVariant1Img from '~/assets/images/products/partytalt-variant1.we
 import partytalt6x6Img from '~/assets/images/products/partytalt-6x6.jpeg';
 import partytalt5x10Img from '~/assets/images/products/partytalt-5x10.jpeg';
 import partytalt4x8Img from '~/assets/images/products/partytalt-4x8.jpeg';
+import talt4x8Img2 from '~/assets/images/products/talt-4x8-2.jpg';
+import talt4x8Img3 from '~/assets/images/products/talt-4x8-3.jpg';
 import bordRuntImg from '~/assets/images/products/bord-runt-new.jpg';
 import bordRektangulartImg from '~/assets/images/products/bord-rektangulart.webp';
 import cocktailbordImg from '~/assets/images/products/cocktailbord.webp';
@@ -101,6 +103,7 @@ export const categories: ProductCategory[] = [
         description:
           'Klassiskt tält med vattentät PVC-duk och galvaniserad stålram. Avtagbara väggar för flexibel konfiguration. Georgiska fönster ger fint ljusinsläpp.',
         image: partytalt4x8Img,
+        images: [partytalt4x8Img, talt4x8Img2, talt4x8Img3],
         price: 'från 4 250 kr/dag',
         specs: {
           Storlek: '4 x 8 meter',
