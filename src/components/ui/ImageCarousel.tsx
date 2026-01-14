@@ -55,13 +55,7 @@ export default function ImageCarousel({ images, alt }: ImageCarouselProps) {
   };
 
   if (images.length === 1) {
-    return (
-      <img
-        src={images[0]}
-        alt={alt}
-        className="w-full h-full object-contain"
-      />
-    );
+    return <img src={images[0]} alt={alt} className="w-full h-full object-contain" />;
   }
 
   return (

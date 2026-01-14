@@ -1,6 +1,5 @@
 // Product images
 import partytaltLargeImg from '~/assets/images/products/partytalt-large.webp';
-import partytaltSmallImg from '~/assets/images/products/partytalt-small.webp';
 import talt4x4Img1 from '~/assets/images/products/talt-4x4-1.jpeg';
 import talt4x4Img2 from '~/assets/images/products/talt-4x4-2.jpeg';
 import talt4x4Img3 from '~/assets/images/products/talt-4x4-3.jpeg';
@@ -30,6 +29,7 @@ export interface ProductVariant {
   description: string;
   image: ImageMetadata;
   images?: ImageMetadata[]; // Optional array for multiple swipeable images
+  optimizedImages?: string[]; // Processed image URLs for carousel (set at build time)
   price?: string; // e.g. "från 500 kr/dag"
   specs?: Record<string, string>;
 }
