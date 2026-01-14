@@ -8,6 +8,7 @@ import partytalt6x6Img from '~/assets/images/products/partytalt-6x6.jpeg';
 import talt6x6Img2 from '~/assets/images/products/talt-6x6-2.jpg';
 import talt6x6Img3 from '~/assets/images/products/talt-6x6-3.jpg';
 import talt5x5Img2 from '~/assets/images/products/talt-5x5-2.jpg';
+import talt5x5Img3 from '~/assets/images/products/talt-5x5-3.jpg';
 import partytalt5x10Img from '~/assets/images/products/partytalt-5x10.jpeg';
 import partytalt4x8Img from '~/assets/images/products/partytalt-4x8.jpeg';
 import talt4x8Img2 from '~/assets/images/products/talt-4x8-2.jpg';
@@ -81,7 +82,7 @@ export const categories: ProductCategory[] = [
         name: 'Partytält 5x5m',
         description: 'Passar för ca 30-40 gäster. Populärt val för familjefester och mindre bröllop.',
         image: partytaltVariant1Img,
-        images: [partytaltVariant1Img, talt5x5Img2, talt6x6Img2],
+        images: [partytaltVariant1Img, talt5x5Img2, talt5x5Img3],
         price: 'från 3 250 kr/dag',
         specs: {
           Storlek: '5 x 5 meter',
