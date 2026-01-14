@@ -61,8 +61,8 @@ export const categories: ProductCategory[] = [
       {
         name: 'Partytält 4x4m',
         description: 'Passar för ca 20-30 gäster. Perfekt för mindre fester och familjetillställningar.',
-        image: talt4x4Img1,
-        images: [talt4x4Img1, talt4x4Img2, talt4x4Img3],
+        image: talt4x4Img3,
+        images: [talt4x4Img3, talt4x4Img1, talt4x4Img2],
         price: 'från 2 750 kr/dag',
         specs: {
           Storlek: '4 x 4 meter',
