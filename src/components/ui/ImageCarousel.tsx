@@ -55,7 +55,7 @@ export default function ImageCarousel({ images, alt }: ImageCarouselProps) {
   };
 
   if (images.length === 1) {
-    return <img src={images[0]} alt={alt} className="w-full h-full object-contain" />;
+    return <img src={images[0]} alt={alt} className="w-full h-full object-cover" />;
   }
 
   return (
@@ -79,41 +79,51 @@ export default function ImageCarousel({ images, alt }: ImageCarouselProps) {
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={1}
             onDragEnd={handleDragEnd}
-            className="w-full h-full object-contain cursor-grab active:cursor-grabbing"
+            className="absolute inset-0 w-full h-full object-cover cursor-grab active:cursor-grabbing"
           />
         </AnimatePresence>
       </div>
 
-      {/* Navigation arrows */}
+      {/* Navigation arrows - premium semi-transparent style */}
       <button
         onClick={() => paginate(-1)}
-        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 dark:bg-slate-800/80 rounded-full flex items-center justify-center shadow-md hover:bg-white dark:hover:bg-slate-700 transition-colors z-10"
+        className="absolute left-0 top-0 bottom-0 w-12 flex items-center justify-center bg-gradient-to-r from-black/30 to-transparent hover:from-black/50 transition-all z-10 group"
         aria-label="Föregående bild"
       >
-        <svg className="w-5 h-5 text-gray-700 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        <svg
+          className="w-8 h-8 text-white/80 group-hover:text-white drop-shadow-lg transition-all"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2.5}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
         </svg>
       </button>
       <button
         onClick={() => paginate(1)}
-        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 dark:bg-slate-800/80 rounded-full flex items-center justify-center shadow-md hover:bg-white dark:hover:bg-slate-700 transition-colors z-10"
+        className="absolute right-0 top-0 bottom-0 w-12 flex items-center justify-center bg-gradient-to-l from-black/30 to-transparent hover:from-black/50 transition-all z-10 group"
         aria-label="Nästa bild"
       >
-        <svg className="w-5 h-5 text-gray-700 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        <svg
+          className="w-8 h-8 text-white/80 group-hover:text-white drop-shadow-lg transition-all"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2.5}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
         </svg>
       </button>
 
       {/* Dots indicator */}
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => goTo(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex
-                ? 'w-6 bg-primary'
-                : 'bg-white/60 dark:bg-slate-400/60 hover:bg-white dark:hover:bg-slate-300'
+            className={`h-2 rounded-full transition-all duration-300 shadow-md ${
+              index === currentIndex ? 'w-6 bg-white' : 'w-2 bg-white/50 hover:bg-white/80'
             }`}
             aria-label={`Gå till bild ${index + 1}`}
           />
@@ -121,7 +131,7 @@ export default function ImageCarousel({ images, alt }: ImageCarouselProps) {
       </div>
 
       {/* Image counter */}
-      <div className="absolute top-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded-full z-10">
+      <div className="absolute top-3 right-3 bg-black/40 text-white text-xs font-medium px-2.5 py-1 rounded-full z-10 backdrop-blur-sm">
         {currentIndex + 1} / {images.length}
       </div>
     </div>
