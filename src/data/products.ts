@@ -1,6 +1,9 @@
 // Product images
 import partytaltLargeImg from '~/assets/images/products/partytalt-large.webp';
 import partytaltSmallImg from '~/assets/images/products/partytalt-small.webp';
+import talt4x4Img1 from '~/assets/images/products/talt-4x4-1.jpeg';
+import talt4x4Img2 from '~/assets/images/products/talt-4x4-2.jpeg';
+import talt4x4Img3 from '~/assets/images/products/talt-4x4-3.jpeg';
 import partytaltVariant1Img from '~/assets/images/products/partytalt-variant1.webp';
 import partytalt6x6Img from '~/assets/images/products/partytalt-6x6.jpeg';
 import partytalt5x10Img from '~/assets/images/products/partytalt-5x10.jpeg';
@@ -26,6 +29,7 @@ export interface ProductVariant {
   name: string;
   description: string;
   image: ImageMetadata;
+  images?: ImageMetadata[]; // Optional array for multiple swipeable images
   price?: string; // e.g. "från 500 kr/dag"
   specs?: Record<string, string>;
 }
@@ -57,7 +61,8 @@ export const categories: ProductCategory[] = [
       {
         name: 'Partytält 4x4m',
         description: 'Passar för ca 20-30 gäster. Perfekt för mindre fester och familjetillställningar.',
-        image: partytaltSmallImg,
+        image: talt4x4Img1,
+        images: [talt4x4Img1, talt4x4Img2, talt4x4Img3],
         price: 'från 2 750 kr/dag',
         specs: {
           Storlek: '4 x 4 meter',
@@ -68,12 +73,12 @@ export const categories: ProductCategory[] = [
       },
       {
         name: 'Partytält 5x5m',
-        description: 'Passar för ca 30-50 gäster. Populärt val för familjefester och mindre bröllop.',
+        description: 'Passar för ca 30-40 gäster. Populärt val för familjefester och mindre bröllop.',
         image: partytaltVariant1Img,
         price: 'från 3 250 kr/dag',
         specs: {
           Storlek: '5 x 5 meter',
-          Kapacitet: '30-50 gäster',
+          Kapacitet: '30-40 gäster',
           Material: 'PVC-duk, galvaniserad stålram',
           Fönster: 'Georgisk stil',
         },
@@ -86,7 +91,7 @@ export const categories: ProductCategory[] = [
         price: 'från 4 000 kr/dag',
         specs: {
           Storlek: '6 x 6 meter',
-          Kapacitet: '30-36 gäster',
+          Kapacitet: '40-50 gäster',
           Material: 'PVC 500g/m², galvaniserad stålram',
           Fönster: 'Georgisk stil',
         },
@@ -99,7 +104,7 @@ export const categories: ProductCategory[] = [
         price: 'från 4 250 kr/dag',
         specs: {
           Storlek: '4 x 8 meter',
-          Kapacitet: '32-42 gäster',
+          Kapacitet: '30-40 gäster',
           Material: 'PVC 500g/m², galvaniserad stålram',
           Fönster: 'Georgisk stil',
         },
@@ -112,19 +117,19 @@ export const categories: ProductCategory[] = [
         price: 'från 5 750 kr/dag',
         specs: {
           Storlek: '5 x 10 meter',
-          Kapacitet: '50-67 gäster',
+          Kapacitet: '60-70 gäster',
           Material: 'PVC 500g/m², galvaniserad stålram',
           Fönster: 'Georgisk stil',
         },
       },
       {
         name: 'Partytält 6x12m',
-        description: 'Passar för ca 60-100 gäster. Perfekt för bröllop och större företagsevent.',
+        description: 'Passar för ca 60-80 gäster. Perfekt för bröllop och större företagsevent.',
         image: partytaltLargeImg,
         price: 'från 6 750 kr/dag',
         specs: {
           Storlek: '6 x 12 meter',
-          Kapacitet: '60-100 gäster',
+          Kapacitet: '60-80 gäster',
           Material: 'PVC-duk, galvaniserad stålram',
           Fönster: 'Georgisk stil',
         },
