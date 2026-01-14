@@ -5,6 +5,8 @@ import talt4x4Img2 from '~/assets/images/products/talt-4x4-2.jpeg';
 import talt4x4Img3 from '~/assets/images/products/talt-4x4-3.jpeg';
 import partytaltVariant1Img from '~/assets/images/products/partytalt-variant1.webp';
 import partytalt6x6Img from '~/assets/images/products/partytalt-6x6.jpeg';
+import talt6x6Img2 from '~/assets/images/products/talt-6x6-2.jpg';
+import talt6x6Img3 from '~/assets/images/products/talt-6x6-3.jpg';
 import partytalt5x10Img from '~/assets/images/products/partytalt-5x10.jpeg';
 import partytalt4x8Img from '~/assets/images/products/partytalt-4x8.jpeg';
 import talt4x8Img2 from '~/assets/images/products/talt-4x8-2.jpg';
@@ -90,6 +92,7 @@ export const categories: ProductCategory[] = [
         description:
           'Elegant tält med vattentät PVC-duk och galvaniserad stålram. Georgiska fönster ger fint ljusinsläpp. Perfekt för medelstora fester och bröllop.',
         image: partytalt6x6Img,
+        images: [partytalt6x6Img, talt6x6Img2, talt6x6Img3],
         price: 'från 4 000 kr/dag',
         specs: {
           Storlek: '6 x 6 meter',
