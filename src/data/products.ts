@@ -30,7 +30,7 @@ import eventgolvImg from '~/assets/images/products/eventgolv.webp';
 // Existing images (keep for flextält)
 
 // 3D Icons for category selector
-import taltIcon from '~/assets/images/icons/talt-icon.png';
+import taltIcon from '~/assets/images/icons/talt-icon-new.png';
 import bordIcon from '~/assets/images/icons/bord-icon.png';
 import stolarIcon from '~/assets/images/icons/stolar-icon.png';
 import kylskapIcon from '~/assets/images/icons/kylskap-icon.png';
