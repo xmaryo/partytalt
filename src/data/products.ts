@@ -177,7 +177,7 @@ export const categories: ProductCategory[] = [
         },
       },
       {
-        name: 'Runt fällbord',
+        name: 'Runt fällbord 150 cm',
         description: 'Runda bord som passar 8-10 personer. Perfekt för bröllop och eleganta tillställningar.',
         image: bordRuntImg,
         price: '125 kr/dag',
