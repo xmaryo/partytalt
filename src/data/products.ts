@@ -12,6 +12,8 @@ import talt5x5Img3 from '~/assets/images/products/talt-5x5-3.jpg';
 import partytalt5x10Img from '~/assets/images/products/partytalt-5x10.jpeg';
 import talt5x10Img2 from '~/assets/images/products/talt-5x10-2.jpg';
 import talt5x10Img3 from '~/assets/images/products/talt-5x10-3.jpg';
+import talt6x12Img2 from '~/assets/images/products/talt-6x12-2.jpg';
+import talt6x12Img3 from '~/assets/images/products/talt-6x12-3.jpg';
 import partytalt4x8Img from '~/assets/images/products/partytalt-4x8.jpeg';
 import talt4x8Img2 from '~/assets/images/products/talt-4x8-2.jpg';
 import talt4x8Img3 from '~/assets/images/products/talt-4x8-3.jpg';
@@ -139,6 +141,7 @@ export const categories: ProductCategory[] = [
         name: 'Partytält 6x12m',
         description: 'Passar för ca 60-80 gäster. Perfekt för bröllop och större företagsevent.',
         image: partytaltLargeImg,
+        images: [partytaltLargeImg, talt6x12Img2, talt6x12Img3],
         price: 'från 6 750 kr/dag',
         specs: {
           Storlek: '6 x 12 meter',
