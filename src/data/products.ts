@@ -215,21 +215,23 @@ export const categories: ProductCategory[] = [
         },
       },
       {
-        name: 'Duk runt bord 150 cm',
+        name: 'Duk runt bord 210 cm',
         description: 'Elegant vit duk för runda bord. Perfekt för bröllop och finare tillställningar.',
         image: dukRuntImg,
         price: '100 kr/dag',
         specs: {
+          Storlek: '210 cm',
           Passar: 'Runt fällbord 150 cm',
           Material: 'Tyg',
         },
       },
       {
-        name: 'Duk fällbord 180 cm',
+        name: 'Duk fällbord 240x130 cm',
         description: 'Stilren vit duk för rektangulära bord. Ger ett professionellt intryck till din dukning.',
         image: dukRektImg,
         price: '80 kr/dag',
         specs: {
+          Storlek: '240 x 130 cm',
           Passar: 'Fällbord 180 cm',
           Material: 'Tyg',
         },
