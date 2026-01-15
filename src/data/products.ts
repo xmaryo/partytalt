@@ -263,13 +263,13 @@ export const categories: ProductCategory[] = [
         },
       },
       {
-        name: 'Ljusslinga medium',
-        description: 'Medium ljusslinga med stämningsfulla lampfattningar. Skapar en magisk atmosfär i tältet.',
+        name: 'Ljusslinga mellan',
+        description: 'Mellan ljusslinga med stämningsfulla lampfattningar. Skapar en magisk atmosfär i tältet.',
         image: ljusslingaImg,
         price: '400 kr/dag',
         specs: {
           Typ: 'Ljusslinga med E27-sockel',
-          Längd: '8 meter',
+          Längd: '9 meter',
           Lamptyp: 'LED-lampor (ingår ej)',
           Användning: 'Tält, utomhus, trädgård',
         },
@@ -281,7 +281,7 @@ export const categories: ProductCategory[] = [
         price: '450 kr/dag',
         specs: {
           Typ: 'Ljusslinga med E27-sockel',
-          Längd: '10 meter',
+          Längd: '12 meter',
           Lamptyp: 'LED-lampor (ingår ej)',
           Användning: 'Tält, utomhus, trädgård',
         },
