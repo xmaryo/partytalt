@@ -157,7 +157,7 @@ export const categories: ProductCategory[] = [
   },
   {
     id: 'bord',
-    title: 'Bord & Dukar',
+    title: 'Bord\n&\nDukar',
     shortDesc: 'Fällbord & cocktailbord',
     icon: 'mdi:table-furniture',
     mainImage: bordRektangulartImg,
