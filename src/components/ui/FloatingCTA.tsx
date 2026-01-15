@@ -59,13 +59,30 @@ export default function FloatingCTA({ text = 'Boka nu', href = '/kontakt', showA
             className="
               relative flex items-center justify-center gap-2
               p-4 md:px-6 md:py-4 rounded-2xl
-              bg-gradient-to-r from-primary to-blue-600
+              bg-gradient-to-br from-primary via-blue-500 to-blue-600
               text-white font-bold text-sm
-              shadow-2xl shadow-primary/40
-              hover:shadow-primary/60
-              transition-shadow duration-300
+              ring-1 ring-white/20
+              transition-all duration-300
             "
-            whileHover={{ scale: 1.05 }}
+            style={{
+              boxShadow: `
+                0 2px 4px -1px rgba(0, 0, 0, 0.2),
+                0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 10px 20px -5px rgba(26, 115, 232, 0.4),
+                0 20px 40px -10px rgba(26, 115, 232, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15)
+              `,
+            }}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: `
+                0 4px 8px -2px rgba(0, 0, 0, 0.25),
+                0 8px 12px -2px rgba(0, 0, 0, 0.15),
+                0 16px 32px -8px rgba(26, 115, 232, 0.5),
+                0 32px 64px -16px rgba(26, 115, 232, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2)
+              `,
+            }}
             whileTap={{ scale: 0.95 }}
           >
             {/* Icon */}
