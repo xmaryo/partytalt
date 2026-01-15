@@ -10,6 +10,8 @@ import talt6x6Img3 from '~/assets/images/products/talt-6x6-3.jpg';
 import talt5x5Img2 from '~/assets/images/products/talt-5x5-2.jpg';
 import talt5x5Img3 from '~/assets/images/products/talt-5x5-3.jpg';
 import partytalt5x10Img from '~/assets/images/products/partytalt-5x10.jpeg';
+import talt5x10Img2 from '~/assets/images/products/talt-5x10-2.jpg';
+import talt5x10Img3 from '~/assets/images/products/talt-5x10-3.jpg';
 import partytalt4x8Img from '~/assets/images/products/partytalt-4x8.jpeg';
 import talt4x8Img2 from '~/assets/images/products/talt-4x8-2.jpg';
 import talt4x8Img3 from '~/assets/images/products/talt-4x8-3.jpg';
@@ -124,6 +126,7 @@ export const categories: ProductCategory[] = [
         description:
           'Rymligt tält med vattentät PVC-duk och robust stålram. Stora georgiska fönster ger härligt ljusinsläpp. Perfekt för större fester och bröllop.',
         image: partytalt5x10Img,
+        images: [partytalt5x10Img, talt5x10Img2, talt5x10Img3],
         price: 'från 5 750 kr/dag',
         specs: {
           Storlek: '5 x 10 meter',
