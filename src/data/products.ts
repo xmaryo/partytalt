@@ -26,6 +26,9 @@ import festbelysningImg from '~/assets/images/products/festbelysning.webp';
 import ljusslingaImg from '~/assets/images/products/ljusslinga-new.jpg';
 import kylskapImg from '~/assets/images/products/kylskap.webp';
 import eventgolvImg from '~/assets/images/products/eventgolv.webp';
+import dukImg from '~/assets/images/products/duk.jpg';
+import dukRuntImg from '~/assets/images/products/duk2.jpg';
+import dukRektImg from '~/assets/images/products/duk3.jpg';
 
 // Existing images (keep for flextält)
 
@@ -198,6 +201,37 @@ export const categories: ProductCategory[] = [
           Höjd: '110 cm',
           Material: 'HDPE bordsskiva, stålram',
           Användning: 'Mingel, cocktailpartyn',
+        },
+      },
+      {
+        name: 'Duk cocktailbord',
+        description:
+          'Klassisk vit duk för cocktailbord som lyfter din bordsdukning och ger en elegant känsla till festen.',
+        image: dukImg,
+        price: '50 kr/dag',
+        specs: {
+          Passar: 'Cocktailbord',
+          Material: 'Tyg',
+        },
+      },
+      {
+        name: 'Duk runt bord 150 cm',
+        description: 'Elegant vit duk för runda bord. Perfekt för bröllop och finare tillställningar.',
+        image: dukRuntImg,
+        price: '100 kr/dag',
+        specs: {
+          Passar: 'Runt fällbord 150 cm',
+          Material: 'Tyg',
+        },
+      },
+      {
+        name: 'Duk fällbord 180 cm',
+        description: 'Stilren vit duk för rektangulära bord. Ger ett professionellt intryck till din dukning.',
+        image: dukRektImg,
+        price: '80 kr/dag',
+        specs: {
+          Passar: 'Fällbord 180 cm',
+          Material: 'Tyg',
         },
       },
     ],
