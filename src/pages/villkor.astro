@@ -18,12 +18,12 @@ const metadata = {
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <!-- Document Container -->
       <div
-        class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-gray-100 dark:border-slate-700 overflow-hidden print:shadow-none print:border-none"
+        class="bg-white dark:bg-slate-800 rounded-2xl shadow-m3-3 border border-gray-100 dark:border-slate-700 overflow-hidden print:shadow-none print:border-none"
       >
         <!-- Header with Logo -->
-        <div class="bg-gradient-to-r from-primary to-primary/80 px-6 py-4 print:py-2 print:px-4">
+        <div class="bg-gradient-to-r from-primary to-blue-600 px-6 py-5 print:py-2 print:px-4">
           <div class="flex items-center justify-center gap-4">
-            <div class="bg-white rounded-xl p-2 shadow-md print:p-1">
+            <div class="bg-white rounded-xl p-2 shadow-m3-2 print:p-1">
               <Image src={logoLight} alt="partytältHbg" class="h-12 w-auto print:h-8" width={80} height={80} />
             </div>
             <div class="text-left">
@@ -36,7 +36,9 @@ const metadata = {
         <!-- Document Content -->
         <div class="px-8 py-10 md:px-12">
           <!-- Intro -->
-          <div class="mb-10 p-6 bg-gray-50 dark:bg-slate-700/50 rounded-xl border-l-4 border-primary">
+          <div
+            class="mb-10 p-6 bg-gradient-to-br from-primary/5 to-blue-500/5 dark:from-primary/10 dark:to-blue-500/10 rounded-2xl border border-primary/20 dark:border-primary/30"
+          >
             <p class="text-gray-700 dark:text-slate-300 leading-relaxed">
               Dessa villkor gäller mellan <strong class="text-gray-900 dark:text-white">partytältHbg</strong> (Uthyraren)
               och kunden (Hyrestagaren) vid uthyrning av tält och tillhörande utrustning för evenemang.
@@ -48,14 +50,15 @@ const metadata = {
 
           <!-- Section 1 -->
           <div class="mb-8">
-            <div class="flex items-center gap-3 mb-4">
-              <span
-                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg"
-                >1</span
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="flex-shrink-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-m3-2"
               >
+                1
+              </div>
               <h2 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">Omfattning</h2>
             </div>
-            <p class="text-gray-700 dark:text-slate-300 leading-relaxed ml-13 pl-0 md:pl-13">
+            <p class="text-gray-700 dark:text-slate-300 leading-relaxed ml-16">
               Villkoren gäller för uthyrning av tält, golv, bord, stolar, belysning, kylutrustning och övrig tillhörande
               utrustning enligt bekräftad bokning/offert.
             </p>
@@ -63,14 +66,15 @@ const metadata = {
 
           <!-- Section 2 -->
           <div class="mb-8">
-            <div class="flex items-center gap-3 mb-4">
-              <span
-                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg"
-                >2</span
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="flex-shrink-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-m3-2"
               >
+                2
+              </div>
               <h2 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">Bokning och betalning</h2>
             </div>
-            <div class="text-gray-700 dark:text-slate-300 leading-relaxed space-y-3 ml-0 md:ml-13">
+            <div class="text-gray-700 dark:text-slate-300 leading-relaxed space-y-3 ml-16">
               <p>Bokning är bindande när den bekräftats av Uthyraren.</p>
               <p><strong class="text-gray-900 dark:text-white">Betalning sker enligt följande:</strong></p>
               <p>
@@ -99,17 +103,20 @@ const metadata = {
 
           <!-- Section 3 -->
           <div class="mb-8">
-            <div class="flex items-center gap-3 mb-4">
-              <span
-                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg"
-                >3</span
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="flex-shrink-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-m3-2"
               >
+                3
+              </div>
               <h2 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">Avbokning och ombokning</h2>
             </div>
-            <div class="text-gray-700 dark:text-slate-300 leading-relaxed space-y-3 ml-0 md:ml-13">
+            <div class="text-gray-700 dark:text-slate-300 leading-relaxed space-y-3 ml-16">
               <p>Avbokning ska ske skriftligen.</p>
               <p><strong class="text-gray-900 dark:text-white">Följande avbokningsavgifter gäller:</strong></p>
-              <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 space-y-2">
+              <div
+                class="bg-gray-50 dark:bg-slate-700/50 rounded-xl p-4 space-y-2 border border-gray-200 dark:border-slate-600"
+              >
                 <div class="flex justify-between items-center border-b border-gray-200 dark:border-slate-600 pb-2">
                   <span>Mer än 30 dagar före evenemang:</span>
                   <span class="font-semibold text-gray-900 dark:text-white">handpenningen behålls (50 %)</span>
@@ -125,16 +132,17 @@ const metadata = {
 
           <!-- Section 4 -->
           <div class="mb-8">
-            <div class="flex items-center gap-3 mb-4">
-              <span
-                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg"
-                >4</span
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="flex-shrink-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-m3-2"
               >
+                4
+              </div>
               <h2 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
                 Leverans, montering och åtkomst
               </h2>
             </div>
-            <div class="text-gray-700 dark:text-slate-300 leading-relaxed space-y-3 ml-0 md:ml-13">
+            <div class="text-gray-700 dark:text-slate-300 leading-relaxed space-y-3 ml-16">
               <p><strong class="text-gray-900 dark:text-white">Hyrestagaren ansvarar för att:</strong></p>
               <ul class="list-none space-y-2 ml-4">
                 <li class="flex items-start gap-2">
@@ -150,23 +158,24 @@ const metadata = {
                   <span>peka ut eventuella rör som ligger i marken så de inte skadas vid montering.</span>
                 </li>
               </ul>
-              <p class="p-4 bg-amber-50 dark:bg-amber-900/20 border-l-4 border-amber-500 rounded-r-lg">
+              <div class="p-4 bg-amber-50 dark:bg-amber-900/20 border-l-4 border-amber-500 rounded-r-xl">
                 Om montering försvåras på grund av bristande åtkomst eller olämpligt underlag har Uthyraren rätt att ta
                 ut extra kostnad eller avbryta montering utan återbetalningsskyldighet.
-              </p>
+              </div>
             </div>
           </div>
 
           <!-- Section 5 -->
           <div class="mb-8">
-            <div class="flex items-center gap-3 mb-4">
-              <span
-                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg"
-                >5</span
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="flex-shrink-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-m3-2"
               >
+                5
+              </div>
               <h2 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">Användning av utrustningen</h2>
             </div>
-            <div class="text-gray-700 dark:text-slate-300 leading-relaxed space-y-3 ml-0 md:ml-13">
+            <div class="text-gray-700 dark:text-slate-300 leading-relaxed space-y-3 ml-16">
               <p>Utrustningen får endast användas för avsett ändamål.</p>
               <p><strong class="text-gray-900 dark:text-white">Det är inte tillåtet att:</strong></p>
               <ul class="list-none space-y-2 ml-4">
@@ -192,17 +201,18 @@ const metadata = {
 
           <!-- Section 6 -->
           <div class="mb-8">
-            <div class="flex items-center gap-3 mb-4">
-              <span
-                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg"
-                >6</span
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="flex-shrink-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-m3-2"
               >
+                6
+              </div>
               <h2 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">Skador och ansvar</h2>
             </div>
-            <div class="text-gray-700 dark:text-slate-300 leading-relaxed space-y-3 ml-0 md:ml-13">
-              <p class="p-4 bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 rounded-r-lg font-medium">
+            <div class="text-gray-700 dark:text-slate-300 leading-relaxed space-y-3 ml-16">
+              <div class="p-4 bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 rounded-r-xl font-medium">
                 Utrustningen är försäkrad vid olyckor och oförutsedda händelser.
-              </p>
+              </div>
               <p><strong class="text-gray-900 dark:text-white">Skador som uppstår på grund av:</strong></p>
               <ul class="list-none space-y-2 ml-4">
                 <li class="flex items-start gap-2">
@@ -232,14 +242,15 @@ const metadata = {
 
           <!-- Section 7 -->
           <div class="mb-8">
-            <div class="flex items-center gap-3 mb-4">
-              <span
-                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg"
-                >7</span
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="flex-shrink-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-m3-2"
               >
+                7
+              </div>
               <h2 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">Väder</h2>
             </div>
-            <div class="text-gray-700 dark:text-slate-300 leading-relaxed space-y-3 ml-0 md:ml-13">
+            <div class="text-gray-700 dark:text-slate-300 leading-relaxed space-y-3 ml-16">
               <p>Tält och utrustning är avsedda för normal användning i normala väderförhållanden.</p>
               <p>
                 Vid kraftig vind, storm, extrem nederbörd eller andra säkerhetsrisker har Uthyraren rätt att avbryta
@@ -253,14 +264,15 @@ const metadata = {
 
           <!-- Section 8 -->
           <div class="mb-8">
-            <div class="flex items-center gap-3 mb-4">
-              <span
-                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg"
-                >8</span
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="flex-shrink-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-m3-2"
               >
+                8
+              </div>
               <h2 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">Nedmontering och återlämning</h2>
             </div>
-            <div class="text-gray-700 dark:text-slate-300 leading-relaxed space-y-3 ml-0 md:ml-13">
+            <div class="text-gray-700 dark:text-slate-300 leading-relaxed space-y-3 ml-16">
               <p>Uthyraren ansvarar för nedmontering vid överenskommen tid.</p>
               <p>Utrustningen ska då vara i samma skick som vid leverans, bortsett från normalt slitage.</p>
               <p class="font-medium text-gray-900 dark:text-white">
@@ -271,14 +283,15 @@ const metadata = {
 
           <!-- Section 9 -->
           <div class="mb-8">
-            <div class="flex items-center gap-3 mb-4">
-              <span
-                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg"
-                >9</span
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="flex-shrink-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-m3-2"
               >
+                9
+              </div>
               <h2 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">Ansvarsbegränsning</h2>
             </div>
-            <div class="text-gray-700 dark:text-slate-300 leading-relaxed space-y-3 ml-0 md:ml-13">
+            <div class="text-gray-700 dark:text-slate-300 leading-relaxed space-y-3 ml-16">
               <p><strong class="text-gray-900 dark:text-white">Uthyraren ansvarar inte för:</strong></p>
               <ul class="list-none space-y-2 ml-4">
                 <li class="flex items-start gap-2">
@@ -304,14 +317,15 @@ const metadata = {
 
           <!-- Section 10 -->
           <div class="mb-4">
-            <div class="flex items-center gap-3 mb-4">
-              <span
-                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg"
-                >10</span
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="flex-shrink-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-m3-2"
               >
+                10
+              </div>
               <h2 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">Personuppgifter</h2>
             </div>
-            <div class="text-gray-700 dark:text-slate-300 leading-relaxed ml-0 md:ml-13">
+            <div class="text-gray-700 dark:text-slate-300 leading-relaxed ml-16">
               <p>
                 Personuppgifter behandlas endast i syfte att administrera bokningen och sparas enligt gällande
                 dataskyddslagstiftning (GDPR).
@@ -321,13 +335,12 @@ const metadata = {
         </div>
 
         <!-- Footer -->
-        <div class="bg-gray-50 dark:bg-slate-700/50 px-4 sm:px-8 py-6 print:hidden">
-          <div class="flex flex-row items-center justify-center gap-2 sm:gap-3">
-            <button
-              onclick="window.print()"
-              class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-colors shadow-md hover:shadow-lg text-sm sm:text-base"
-            >
-              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div
+          class="bg-gray-50 dark:bg-slate-700/50 px-4 sm:px-8 py-6 print:hidden border-t border-gray-100 dark:border-slate-600"
+        >
+          <div class="flex flex-row items-center justify-center gap-3">
+            <button onclick="window.print()" class="btn-primary btn-m3 inline-flex items-center gap-2 px-6 py-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -337,11 +350,8 @@ const metadata = {
               </svg>
               Skriv ut
             </button>
-            <a
-              href="/"
-              class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 bg-white dark:bg-slate-800 text-gray-700 dark:text-white font-semibold rounded-xl border-2 border-gray-200 dark:border-slate-600 hover:border-primary hover:text-primary transition-colors shadow-sm hover:shadow-md text-sm sm:text-base"
-            >
-              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <a href="/" class="btn-secondary btn-m3 inline-flex items-center gap-2 px-6 py-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -371,14 +381,17 @@ const metadata = {
       font-size: 11pt;
     }
 
-    /* Ensure header stays compact */
-    .bg-gradient-to-r {
+    .bg-gradient-to-r,
+    .bg-gradient-to-br {
       padding: 0.5rem 1rem !important;
     }
 
-    /* Prevent page breaks inside sections */
     .mb-8 {
       page-break-inside: avoid;
+    }
+
+    .rounded-2xl {
+      border-radius: 0.5rem !important;
     }
   }
 </style>

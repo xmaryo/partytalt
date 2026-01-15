@@ -15,7 +15,7 @@ export const headerData = {
       href: getPermalink('/vanliga-fragor'),
     },
     {
-      text: 'Avtal/Villkor',
+      text: 'Hyresvillkor',
       href: getPermalink('/villkor'),
       target: '_blank',
     },
