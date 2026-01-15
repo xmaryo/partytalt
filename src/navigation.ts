@@ -3,6 +3,10 @@ import { getPermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     {
+      text: 'Produkter',
+      href: '/#produkter',
+    },
+    {
       text: 'Om oss',
       href: getPermalink('/om-oss'),
     },
