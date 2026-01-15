@@ -128,7 +128,7 @@ export const categories: ProductCategory[] = [
         description:
           'Rymligt tält med vattentät PVC-duk och robust stålram. Stora georgiska fönster ger härligt ljusinsläpp. Perfekt för större fester och bröllop.',
         image: partytalt5x10Img,
-        images: [partytalt5x10Img, talt5x10Img2, talt5x10Img3],
+        images: [partytalt5x10Img, talt5x10Img2, talt6x12Img3],
         price: 'från 5 750 kr/dag',
         specs: {
           Storlek: '5 x 10 meter',
@@ -141,7 +141,7 @@ export const categories: ProductCategory[] = [
         name: 'Partytält 6x12m',
         description: 'Passar för ca 60-80 gäster. Perfekt för bröllop och större företagsevent.',
         image: partytaltLargeImg,
-        images: [partytaltLargeImg, talt6x12Img2, talt6x12Img3],
+        images: [partytaltLargeImg, talt6x12Img2, talt5x10Img3],
         price: 'från 6 750 kr/dag',
         specs: {
           Storlek: '6 x 12 meter',
